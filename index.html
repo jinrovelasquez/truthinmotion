@@ -1487,10 +1487,10 @@ body::before {
     <a href="#" data-page="thoughtsPage"><span>little notes</span></a>
 </nav>
 
-<div class="music-info-strip" aria-label="Music player information">
+<div class="music-info-strip" aria-label="Currently playing song and its meaning">
     <div class="music-info-track">
-        <span>♪ NOTE: Music starts playing after your first click anywhere on the page. Use the player strip at the bottom to play or pause, skip to the next track, or return to the previous one.</span>
-        <span aria-hidden="true">♪ NOTE: Music starts playing after your first click anywhere on the page. Use the player strip at the bottom to play or pause, skip to the next track, or return to the previous one.</span>
+        <span class="music-marquee-message">♪ NOW PLAYING: Viva La Vida — Coldplay. A reflection on power, pride, and how life can change, reminding us to stay humble.</span>
+        <span class="music-marquee-message" aria-hidden="true">♪ NOW PLAYING: Viva La Vida — Coldplay. A reflection on power, pride, and how life can change, reminding us to stay humble.</span>
     </div>
 </div>
 
@@ -2592,26 +2592,31 @@ const playlist = [
     {
         title: "Viva La Vida",
         artist: "Coldplay",
+        meaning: "A reflection on power, pride, and how life can change, reminding us to stay humble.",
         file: "https://res.cloudinary.com/tumhfwoi/video/upload/v1795476642/vivalavida.mp3"
     },
     {
         title: "The Nights",
         artist: "Avicii",
+        meaning: "A reminder to live boldly, make memories, and build a life filled with stories worth telling.",
         file: "https://res.cloudinary.com/tumhfwoi/video/upload/v1795476642/thenights.mp3"
     },
     {
         title: "Pompeii",
         artist: "Bastille",
+        meaning: "A song about feeling stuck as the world changes, and questioning what remains when everything falls apart.",
         file: "https://res.cloudinary.com/tumhfwoi/video/upload/v1795476641/pompeii.mp3"
     },
     {
         title: "The Days",
         artist: "Avicii",
+        meaning: "A celebration of the days we've lived, the people we've met, and the memories that stay with us.",
         file: "https://res.cloudinary.com/tumhfwoi/video/upload/v1795476641/thedays.mp3"
     },
     {
         title: "A Sky Full of Stars",
         artist: "Coldplay",
+        meaning: "A bright expression of love, wonder, and finding someone who makes life feel extraordinary.",
         file: "https://res.cloudinary.com/tumhfwoi/video/upload/v1795476640/askyfullofstars.mp3"
     }
 ];
@@ -2859,6 +2864,11 @@ function loadSong(index) {
     title.textContent = playlist[currentSong].title;
     artist.textContent = "— " + playlist[currentSong].artist;
 
+    const marqueeMessage = `♪ NOW PLAYING: ${playlist[currentSong].title} — ${playlist[currentSong].artist}. ${playlist[currentSong].meaning}`;
+    document.querySelectorAll(".music-marquee-message").forEach(message => {
+        message.textContent = marqueeMessage;
+    });
+
     lyricsSongName.textContent = playlist[currentSong].title;
     lyricsSongArtist.textContent = playlist[currentSong].artist;
     renderLyrics();
@@ -3042,20 +3052,26 @@ music.addEventListener("error", () => {
 loadSong(0);
 
 
-// AUTOPLAY ATTEMPT
+// AUTOPLAY ATTEMPT — PLAY WITH SOUND WHEN THE PAGE LOADS
 
 window.addEventListener("load", async () => {
-    music.muted = true;
+    music.muted = false;
+    music.volume = Number(volume.value);
 
     try {
         await music.play();
+        // Autoplay succeeded. Remove the fallback interaction listeners.
+        document.removeEventListener("click", enableMusic);
+        document.removeEventListener("keydown", enableMusic);
+        document.removeEventListener("touchstart", enableMusic);
     } catch (error) {
-        console.log("Autoplay blocked by browser.");
+        // Some browsers block autoplay with sound.
+        console.log("Autoplay with sound was blocked. Waiting for the visitor's first interaction.");
     }
 });
 
 
-// Enable sound after first interaction
+// Fallback — START MUSIC AFTER THE FIRST INTERACTION IF AUTOPLAY IS BLOCKED
 
 function enableMusic() {
     music.muted = false;
