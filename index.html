@@ -9,6 +9,3909 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>creative composition.</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f5f6f7;
+    color: #222831;
+    overflow: hidden;
+}
+
+/* MAIN LAYOUT */
+
+.layout {
+    display: flex;
+    height: 100vh;
+    max-width: 1400px;
+    margin: auto;
+    background: #fff;
+}
+
+/* LEFT SIDEBAR */
+
+.sidebar {
+    width: 320px;
+    min-width: 320px;
+    height: 100vh;
+    padding: 75px 35px 45px;
+    border-right: 1px solid #e8e9ec;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.profile-image {
+    width: 100%;
+    height: 235px;
+    object-fit: cover;
+    border-radius: 5px;
+    background: #e9edf2;
+    margin-bottom: 25px;
+}
+
+.username {
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 5px;
+}
+
+.handle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: #8291a3;
+    margin-bottom: 20px;
+}
+
+.bio {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #737b86;
+    margin-bottom: 25px;
+}
+
+.bio span {
+    color: #4778ad;
+}
+
+.section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: #a0a7b0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 13px;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #515b68;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.navigation a:hover {
+    color: #4778ad;
+    padding-left: 5px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    text-decoration: none;
+    color: #4778ad;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: #b2b8c0;
+}
+
+/* RIGHT BLOG SECTION */
+
+.blog {
+    flex: 1;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 75px 8% 60px;
+    background: #f9fafb;
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+    padding-bottom: 60px;
+}
+
+.blog::-webkit-scrollbar {
+    width: 5px;
+}
+
+.blog::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+.blog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e6e9ed;
+    margin-bottom: 30px;
+}
+
+.blog-title {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.status {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: #6e91b7;
+}
+
+.status::before {
+    content: "●";
+    font-size: 8px;
+    margin-right: 7px;
+}
+
+/* POSTS */
+
+.post {
+    max-width: 680px;
+    margin: 0 auto 35px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e6e9ed;
+}
+
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: #9aa3ae;
+}
+
+.post-content {
+    font-size: 14px;
+    line-height: 1.9;
+    color: #525c68;
+}
+
+.post-content h2 {
+    font-size: 20px;
+    color: #222831;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+.post-content p {
+    margin-bottom: 12px;
+}
+
+.post-content .blue {
+    color: #4778ad;
+}
+
+.post-image {
+    width: 100%;
+    max-height: 380px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.quote {
+    padding: 22px 25px;
+    border-left: 2px solid #7799bd;
+    background: #f0f3f7;
+    color: #4f6074;
+    font-size: 16px;
+    line-height: 1.8;
+    font-style: italic;
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: #a0a7b0;
+}
+
+.tag {
+    color: #6c91b8;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 750px) {
+    body {
+        overflow: auto;
+    }
+
+    .layout {
+        display: block;
+        height: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 0;
+        height: auto;
+        padding: 60px 25px 25px;
+        border-right: none;
+        border-bottom: 1px solid #e8e9ec;
+    }
+
+    .profile-image {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+    }
+
+    .sidebar-footer {
+        display: none;
+    }
+
+    .blog {
+        height: auto;
+        overflow: visible;
+        padding: 65px 22px 30px;
+    }
+}
+
+.post-video {
+    width: 100%;
+    max-height: 450px;
+    object-fit: contain;
+    display: block;
+    border-radius: 4px;
+    margin-top: 15px;
+    background: #eef0f3;
+}
+
+/* THIN TOP MUSIC STRIP */
+
+.music-player {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    padding: 0 25px;
+    background: #ffffff;
+    border-bottom: 1px solid #e8e9ec;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.music-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.music-title {
+    font-size: 11px;
+    font-weight: 600;
+    color: #222831;
+}
+
+.music-artist {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: #929ba6;
+}
+
+.music-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.music-button {
+    border: none;
+    background: transparent;
+    color: #4778ad;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 3px;
+}
+
+.music-button:hover {
+    color: #222831;
+}
+
+.music-volume {
+    width: 65px;
+    height: 3px;
+    accent-color: #6e91b7;
+    cursor: pointer;
+}
+
+.music-player audio {
+    display: none;
+}
+
+@media (max-width: 750px) {
+    .music-player {
+        padding: 0 12px;
+    }
+
+    .music-volume {
+        display: none;
+    }
+}
+
+/* PHOTO ALBUM MARQUEE */
+
+.marquee-window {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 25px;
+    padding: 10px 0 20px;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: photoMarquee 35s linear infinite;
+}
+
+.marquee-group {
+    display: flex;
+    gap: 16px;
+    padding-right: 16px;
+}
+
+.marquee-window:hover .marquee-track,
+.marquee-window.is-paused .marquee-track {
+    animation-play-state: paused;
+}
+
+.photo-card {
+    flex: 0 0 250px;
+    width: 250px;
+    cursor: zoom-in;
+    border: none;
+    padding: 0;
+    background: transparent;
+    text-align: left;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 310px;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+    transition: opacity 0.3s ease;
+}
+
+.photo-card:hover img {
+    opacity: 0.85;
+}
+
+.photo-caption {
+    display: block;
+    margin-top: 9px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: #8291a3;
+}
+
+@keyframes photoMarquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* PHOTO LIGHTBOX */
+
+.photo-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(20, 25, 32, 0.94);
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+.photo-lightbox.active {
+    display: flex;
+}
+
+.lightbox-image {
+    max-width: 90%;
+    max-height: 82vh;
+    object-fit: contain;
+    border-radius: 3px;
+}
+
+.lightbox-caption {
+    position: absolute;
+    bottom: 20px;
+    color: #ffffff;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    text-align: center;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 35px;
+    font-weight: 300;
+    cursor: pointer;
+    line-height: 1;
+}
+
+@media (max-width: 750px) {
+    .photo-card {
+        flex-basis: 190px;
+        width: 190px;
+    }
+
+    .photo-card img {
+        height: 240px;
+    }
+
+    .lightbox-image {
+        max-width: 100%;
+        max-height: 75vh;
+    }
+}
+
+.photo-card {
+    display: block;
+}
+
+.photo-card:focus-visible {
+    outline: 2px solid #6e91b7;
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+        animation: none;
+    }
+}
+
+/* MARQUEE ARROW CONTROLS */
+
+.marquee-container {
+    position: relative;
+    width: 100%;
+}
+
+.marquee-arrow {
+    position: absolute;
+    top: 43%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #e1e5ea;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    color: #4778ad;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: 0.2s;
+}
+
+.marquee-arrow:hover {
+    background: #4778ad;
+    color: white;
+}
+
+.marquee-arrow.left {
+    left: 8px;
+}
+
+.marquee-arrow.right {
+    right: 8px;
+}
+
+
+/* DIVIDER BETWEEN PHOTO COLLECTIONS */
+
+.album-divider {
+    width: 100%;
+    height: 1px;
+    background: #e1e6ec;
+    margin: 35px auto;
+}
+
+
+
+
+/* NEW INTERACTIVE PAGES — PLAYROOM + THOUGHTS & GUESTBOOK */
+.page[hidden] { display: none !important; }
+
+.feature-intro {
+    max-width: 680px;
+    margin: 0 auto 28px;
+    color: #687484;
+    font-size: 13px;
+    line-height: 1.8;
+}
+.feature-kicker {
+    display: inline-block;
+    margin-bottom: 9px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #f1eaff;
+    color: #8061b2;
+    font: 10px 'DM Mono', monospace;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.feature-card {
+    max-width: 680px;
+    margin: 0 auto 25px;
+    padding: 24px;
+    border: 1px solid #e7e9ef;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 7px 22px rgba(46, 57, 75, .045);
+}
+.feature-card h2 { margin: 0 0 8px; font-size: 19px; color: #252d39; }
+.feature-card p { color: #6f7885; font-size: 13px; line-height: 1.75; }
+.feature-card .mini-label {
+    margin-bottom: 8px;
+    color: #a18ac4;
+    font: 10px 'DM Mono', monospace;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+.feature-button, .choice-button {
+    border: 0;
+    border-radius: 6px;
+    padding: 10px 15px;
+    background: #6e91b7;
+    color: #fff;
+    font: 12px 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: .2s ease;
+}
+.feature-button:hover, .choice-button:hover { filter: brightness(.94); transform: translateY(-1px); }
+.feature-button.secondary { background: #eee8f8; color: #765ba4; }
+.feature-input, .feature-textarea {
+    width: 100%;
+    border: 1px solid #dfe4eb;
+    border-radius: 6px;
+    padding: 11px 12px;
+    color: #354052;
+    background: #fbfcfe;
+    font: 13px 'DM Sans', sans-serif;
+    outline: none;
+}
+.feature-input:focus, .feature-textarea:focus { border-color: #9a83c3; box-shadow: 0 0 0 3px #f1eaff; }
+.feature-textarea { min-height: 95px; resize: vertical; }
+.feature-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 13px; }
+.feature-feedback { min-height: 23px; margin-top: 12px; font-size: 12px; color: #6d7f94; }
+.trivia-options { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 16px; }
+.trivia-options button {
+    padding: 12px; border: 1px solid #e5e8ef; border-radius: 7px;
+    background: #faf9fd; color: #4f5a69; text-align: left;
+    font: 12px 'DM Sans', sans-serif; cursor: pointer;
+}
+.trivia-options button:hover { border-color: #b9a6d7; background: #f5f0fc; }
+.trivia-options button:disabled { cursor: default; opacity: .8; }
+.trivia-options button.correct { background: #eaf6ef; border-color: #9acbaa; color: #34754a; }
+.trivia-options button.incorrect { background: #fff0ef; border-color: #e7aaa5; color: #a34d47; }
+.trivia-options button.selected { border-color: #9a83c3; background: #f1eaff; color: #51446e; box-shadow: 0 0 0 2px rgba(154,131,195,.12); }
+.trivia-review { border-top: 1px solid #e8ebf0; padding: 14px 0; }
+.trivia-review h3 { margin: 0 0 8px; color: #354052; font: 600 13px 'DM Sans', sans-serif; }
+.trivia-review p { margin: 5px 0; font-size: 12px; line-height: 1.55; }
+.trivia-your-answer { color: #b84f4b; }
+.trivia-correct-answer { color: #34754a; }
+.trivia-result-score { margin: 10px 0 16px; color: #354052; font-size: 15px; font-weight: 600; }
+
+.word-slots { display: flex; gap: 8px; margin: 17px 0; flex-wrap: wrap; }
+.word-slots span {
+    width: 43px; height: 46px; display: grid; place-items: center;
+    border: 1px solid #dfe4eb; border-radius: 6px; background: #f8f7fc;
+    color: #51446e; font: 600 18px 'DM Mono', monospace;
+}
+.word-slots span.match { background: #e8f5ec; border-color: #9bc9a7; }
+.word-slots span.present { background: #fff5df; border-color: #e7c77d; }
+.word-slots span.absent { background: #eef0f3; border-color: #d8dce2; color: #858d98; }
+.guess-list { display: grid; gap: 7px; margin-top: 14px; }
+.guess-row { display: flex; gap: 6px; }
+.guess-row span { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 4px; background: #f1f2f5; font: 11px 'DM Mono', monospace; }
+.tic-board { display: grid; grid-template-columns: repeat(3, 66px); gap: 7px; justify-content: center; margin: 18px auto 12px; }
+.tic-cell {
+    width: 66px; height: 66px; border: 1px solid #e2e5ec; border-radius: 9px;
+    background: #f8f6fc; color: #8064aa; font: 600 27px 'DM Sans', sans-serif; cursor: pointer;
+}
+.tic-cell:nth-child(even) { background: #f2f7fb; color: #6287ae; }
+.tic-cell:disabled { cursor: default; }
+.thought-quote {
+    padding: 28px 27px; border-left: 3px solid #a58acb; border-radius: 0 8px 8px 0;
+    background: linear-gradient(110deg, #f5f0fc, #eef5fb);
+    color: #4d5b6c; font-size: 17px; font-style: italic; line-height: 1.85;
+}
+.thought-credit { margin-top: 13px; color: #8993a1; font: 10px 'DM Mono', monospace; text-transform: uppercase; letter-spacing: 1px; }
+.guest-entry { padding: 14px 0; border-bottom: 1px solid #edf0f3; }
+.guest-entry:last-child { border-bottom: 0; }
+.guest-entry strong { color: #6e6792; font-size: 12px; }
+.guest-entry time { float: right; color: #a4aab4; font: 10px 'DM Mono', monospace; }
+.guest-entry p { margin-top: 6px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.empty-guestbook { padding: 18px; border: 1px dashed #d9dce6; border-radius: 7px; text-align: center; color: #929aa6; font-size: 12px; }
+.nav-note { color: #b0a2c8; font: 9px 'DM Mono', monospace; margin-left: 5px; }
+@media (max-width: 750px) {
+    .feature-card { padding: 19px; }
+    .trivia-options { grid-template-columns: 1fr; }
+    .thought-quote { font-size: 15px; padding: 22px; }
+}
+
+
+
+/* FIXED TOP NAVIGATION + BOTTOM MUSIC STRIP */
+:root {
+    --top-nav-height: 54px;
+    --music-strip-height: 35px;
+}
+.top-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--top-nav-height);
+    padding: 0 clamp(14px, 4vw, 48px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(18px, 4vw, 52px);
+    background: rgba(255,255,255,.99);
+    border-bottom: 1px solid #e8e9ec;
+    box-shadow: 0 2px 10px rgba(35,45,60,.035);
+    z-index: 1100;
+    white-space: nowrap;
+}
+.top-navigation a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #8c96a3;
+    text-decoration: none;
+    font: 10px 'DM Mono', monospace;
+    letter-spacing: .3px;
+    transition: color .2s ease, transform .2s ease;
+}
+.top-navigation a span {
+    color: #465363;
+    font: 600 12px 'DM Sans', sans-serif;
+    letter-spacing: 0;
+}
+.top-navigation a:hover { color: #9276b9; transform: translateY(-1px); }
+.top-navigation a:hover span { color: #8064aa; }
+.top-navigation a i { color: #a58acb; font-style: normal; font-size: 11px; }
+
+.layout {
+    height: calc(100vh - var(--top-nav-height) - var(--music-strip-height));
+    margin-top: var(--top-nav-height);
+    margin-bottom: var(--music-strip-height);
+}
+.sidebar, .blog {
+    height: 100%;
+}
+.music-player {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    height: var(--music-strip-height);
+    z-index: 1200;
+}
+@media (max-width: 750px) {
+    .top-navigation {
+        height: 50px;
+        justify-content: flex-start;
+        gap: 22px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 0 16px;
+        scrollbar-width: none;
+    }
+    .top-navigation::-webkit-scrollbar { display: none; }
+    .top-navigation a { flex: 0 0 auto; }
+    .layout {
+        height: auto;
+        min-height: calc(100vh - 85px);
+        margin-top: 50px;
+        margin-bottom: 35px;
+    }
+    .sidebar, .blog { height: auto; }
+    .music-player { height: 35px; }
+}
+
+
+
+/* ===== LIGHT BLUE / PAPER TEXTURE COLOR REFRESH ===== */
+:root {
+    --ink: #253342;
+    --muted-ink: #687889;
+    --blue: #477fae;
+    --blue-deep: #356b98;
+    --blue-soft: #e7f2fb;
+    --line-blue: #d7e5f0;
+}
+
+/* A subtle paper-like texture made with CSS gradients; no external image needed. */
+body {
+    background-color: #edf3f8;
+    background-image:
+        radial-gradient(circle at 12% 18%, rgba(111, 164, 204, .11) 0 1px, transparent 1.7px),
+        radial-gradient(circle at 78% 68%, rgba(122, 151, 177, .09) 0 1px, transparent 1.8px),
+        linear-gradient(135deg, rgba(255,255,255,.82), rgba(231,241,249,.82)),
+        repeating-linear-gradient(0deg, rgba(70,105,135,.018) 0, rgba(70,105,135,.018) 1px, transparent 1px, transparent 4px);
+    background-size: 17px 17px, 23px 23px, auto, auto;
+    color: var(--ink);
+}
+
+.layout {
+    background: rgba(255,255,255,.93);
+    box-shadow: 0 12px 42px rgba(55, 83, 108, .09);
+}
+
+.sidebar {
+    background:
+        linear-gradient(160deg, rgba(235,245,252,.96), rgba(255,255,255,.99) 52%);
+    border-right-color: #dce8f1;
+}
+
+.blog {
+    background-color: rgba(250,252,254,.97);
+    background-image:
+        radial-gradient(rgba(91,135,169,.055) .7px, transparent .8px);
+    background-size: 13px 13px;
+    scrollbar-color: #b9d0e2 transparent;
+}
+
+.blog::-webkit-scrollbar-thumb { background: #b9d0e2; }
+.blog-header, .post { border-color: #dfe8ef; }
+.status { color: #4d86b5; }
+.username { color: #263b4e; }
+.handle, .post-meta { color: #8292a1; }
+
+/* Top navigation: clearly visible, still clean and understated. */
+.top-navigation {
+    background: linear-gradient(90deg, #dceefa 0%, #eaf5fc 48%, #dceefa 100%);
+    border-bottom: 1px solid #c4dbea;
+    box-shadow: 0 3px 13px rgba(54, 101, 139, .13);
+}
+.top-navigation a {
+    color: #52718a;
+}
+.top-navigation a span {
+    color: #263f54;
+}
+.top-navigation a i { color: #4384b4; }
+.top-navigation a:hover,
+.top-navigation a:hover span { color: #1f6598; }
+
+/* Bottom music strip: brighter blue tint with clear, clickable controls. */
+.music-player {
+    background: linear-gradient(90deg, #d4eafa, #e6f3fc 50%, #d4eafa);
+    border-top: 1px solid #c3dcec;
+    border-bottom: 0;
+    box-shadow: 0 -3px 14px rgba(54, 101, 139, .12);
+}
+.music-title { color: #263f54; }
+.music-artist { color: #66839a; }
+.music-button { color: #2f78aa; }
+.music-button:hover { color: #174f78; }
+.music-volume { accent-color: #3d83b4; }
+
+/* A consistent cool-blue accent across interactive details. */
+.feature-kicker {
+    background: #e5f1fa;
+    color: #477fae;
+}
+.feature-card {
+    border-color: #dce8f1;
+    box-shadow: 0 7px 22px rgba(46, 78, 104, .06);
+}
+.feature-card h2 { color: #293f52; }
+.feature-card .mini-label { color: #5688ae; }
+.feature-button, .choice-button {
+    background: #4e85b1;
+}
+.feature-button.secondary {
+    background: #e5f0f8;
+    color: #416f94;
+}
+.feature-input:focus, .feature-textarea:focus {
+    border-color: #78a9cc;
+    box-shadow: 0 0 0 3px #e8f3fb;
+}
+.trivia-options button:hover {
+    border-color: #9bbdd7;
+    background: #edf6fc;
+}
+.tic-cell { color: #4e85b1; }
+.tic-cell:nth-child(even) { color: #4e9b9a; }
+.thought-quote {
+    border-left-color: #5d98c2;
+    background: linear-gradient(110deg, #eaf4fb, #f1f7fa 65%, #f8f6ef);
+    color: #43586a;
+}
+.thought-credit { color: #7890a2; }
+.guest-entry strong { color: #477fae; }
+.nav-note { color: #6d9abb; }
+
+.marquee-arrow {
+    border-color: #d4e3ee;
+    color: #3f7eaa;
+}
+.marquee-arrow:hover {
+    background: #4e85b1;
+    color: #fff;
+}
+.album-divider { background: #d9e5ee; }
+
+a:focus-visible, button:focus-visible, input:focus-visible,
+textarea:focus-visible, select:focus-visible {
+    outline: 2px solid #5b96c1;
+    outline-offset: 3px;
+}
+
+@media (max-width: 750px) {
+    .top-navigation {
+        background: linear-gradient(90deg, #dceefa, #eaf5fc);
+    }
+    .music-player {
+        background: linear-gradient(90deg, #d4eafa, #e6f3fc);
+    }
+}
+
+
+
+/* ===== FIXED PAPER TEXTURE + TRANSLUCENT CONTENT COLUMNS ===== */
+body {
+    background-color: #edf3f8;
+    background-attachment: fixed;
+    background-repeat: repeat;
+}
+
+/* Let the page texture show through the two main columns. */
+.layout {
+    background: transparent !important;
+}
+
+.sidebar {
+    background: rgba(239, 247, 252, 0.58) !important;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    border-right-color: rgba(190, 211, 227, 0.72);
+}
+
+.blog {
+    background: rgba(250, 252, 254, 0.62) !important;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+}
+
+/* Keep the subtle texture stationary behind the scrolling blog content. */
+.blog {
+    background-image:
+        radial-gradient(rgba(91,135,169,.045) .7px, transparent .8px) !important;
+    background-size: 13px 13px;
+    background-attachment: local;
+}
+
+/* Slightly soften cards so the overall page feels layered, not washed out. */
+.feature-card {
+    background: rgba(255, 255, 255, 0.88);
+}
+
+
+
+/* ===== MORE DEFINED CRUMPLED PAPER + FLOATING TRANSLUCENT COLUMNS ===== */
+body {
+    background-color: #e4edf4 !important;
+    background-image:
+        radial-gradient(ellipse at 12% 12%, rgba(255,255,255,.92) 0%, transparent 31%),
+        radial-gradient(ellipse at 86% 19%, rgba(171,194,211,.34) 0%, transparent 35%),
+        radial-gradient(ellipse at 26% 76%, rgba(255,255,255,.62) 0%, transparent 29%),
+        radial-gradient(ellipse at 91% 84%, rgba(157,183,203,.30) 0%, transparent 34%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='700' viewBox='0 0 900 700'%3E%3Cfilter id='crumple'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.009 .014' numOctaves='4' seed='23' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='gamma' amplitude='.22' exponent='1.45' offset='.70'/%3E%3CfeFuncG type='gamma' amplitude='.22' exponent='1.45' offset='.73'/%3E%3CfeFuncB type='gamma' amplitude='.22' exponent='1.45' offset='.76'/%3E%3CfeFuncA type='table' tableValues='0 .34'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='%23e8f0f5'/%3E%3Crect width='100%25' height='100%25' filter='url(%23crumple)' opacity='.68'/%3E%3C/svg%3E") !important;
+    background-size: auto, auto, auto, auto, 900px 700px !important;
+    background-position: center, center, center, center, center top !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat !important;
+}
+
+/* Soft angular creases and uneven highlights mimic lightly crumpled paper. */
+body::before {
+    opacity: .78 !important;
+    background:
+        linear-gradient(147deg, transparent 0 16%, rgba(255,255,255,.52) 16.15%, transparent 16.8% 100%),
+        linear-gradient(31deg, transparent 0 38%, rgba(130,160,184,.15) 38.15%, transparent 38.85% 100%),
+        linear-gradient(116deg, transparent 0 62%, rgba(255,255,255,.48) 62.15%, transparent 62.85% 100%),
+        linear-gradient(173deg, transparent 0 79%, rgba(130,160,184,.12) 79.15%, transparent 79.8% 100%),
+        radial-gradient(ellipse at 24% 30%, rgba(255,255,255,.44), transparent 24%),
+        radial-gradient(ellipse at 76% 67%, rgba(137,165,188,.17), transparent 27%) !important;
+}
+
+/* Give each column its own breathing room and soft lifted shadow. */
+.layout {
+    gap: 18px !important;
+    padding: 16px 18px !important;
+    background: transparent !important;
+}
+
+.sidebar {
+    flex: 0 0 320px;
+    border: 1px solid rgba(255,255,255,.72) !important;
+    border-radius: 17px;
+    background: rgba(239, 247, 252, .16) !important;
+    -webkit-backdrop-filter: blur(14px) saturate(135%);
+    backdrop-filter: blur(14px) saturate(135%);
+    box-shadow:
+        0 14px 34px rgba(54, 83, 107, .14),
+        0 3px 9px rgba(54, 83, 107, .07),
+        inset 0 1px 0 rgba(255,255,255,.55) !important;
+}
+
+.blog {
+    min-width: 0;
+    border: 1px solid rgba(255,255,255,.76);
+    border-radius: 17px;
+    background: rgba(250, 253, 255, .17) !important;
+    -webkit-backdrop-filter: blur(14px) saturate(135%);
+    backdrop-filter: blur(14px) saturate(135%);
+    box-shadow:
+        0 14px 38px rgba(54, 83, 107, .15),
+        0 3px 9px rgba(54, 83, 107, .07),
+        inset 0 1px 0 rgba(255,255,255,.62) !important;
+}
+
+/* Keep individual reading cards legible against the stronger texture. */
+.feature-card {
+    background: rgba(255,255,255,.86) !important;
+    border-color: rgba(204,220,233,.78) !important;
+}
+
+@media (max-width: 750px) {
+    .layout {
+        padding: 12px !important;
+        gap: 12px !important;
+    }
+    .sidebar {
+        width: 100%;
+        margin: 0;
+        border-radius: 16px;
+        flex: initial;
+    }
+    .blog {
+        margin-top: 12px;
+        border-radius: 16px;
+    }
+}
+
+
+
+/* ===== MOBILE NAVIGATION: FIT ALL FIVE LINKS WITHOUT CROPPING ===== */
+@media (max-width: 750px) {
+    .top-navigation {
+        width: 100%;
+        height: 50px;
+        padding: 0 8px;
+        gap: 0;
+        justify-content: space-between;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        box-sizing: border-box;
+    }
+
+    .top-navigation a {
+        flex: 1 1 20%;
+        min-width: 0;
+        justify-content: center;
+        gap: 3px;
+        font-size: 8px;
+        letter-spacing: 0;
+        white-space: nowrap;
+    }
+
+    .top-navigation a span {
+        font-size: clamp(8px, 2.55vw, 10px);
+        letter-spacing: -.2px;
+    }
+
+    .top-navigation a i {
+        display: none;
+    }
+}
+
+@media (max-width: 360px) {
+    .top-navigation {
+        padding: 0 5px;
+    }
+    .top-navigation a {
+        gap: 2px;
+        font-size: 7px;
+    }
+    .top-navigation a span {
+        font-size: 8px;
+    }
+}
+
+
+
+/* ===== BALANCED TOP SPACING INSIDE BOTH COLUMNS ===== */
+/* Match the top inset to the existing side padding instead of leaving a large gap. */
+@media (min-width: 751px) {
+    .sidebar {
+        padding-top: 35px !important;
+    }
+    .blog {
+        padding-top: 35px !important;
+    }
+}
+
+/* On phones, use the same compact inset as the mobile side padding. */
+@media (max-width: 750px) {
+    .sidebar {
+        padding-top: 25px !important;
+    }
+    .blog {
+        padding-top: 22px !important;
+    }
+}
+
+
+
+/* ===== FINAL GLASS FINISH ===== */
+.sidebar,
+.blog {
+    border-color: rgba(255,255,255,.82) !important;
+    box-shadow:
+        0 18px 42px rgba(48, 77, 101, .16),
+        0 4px 12px rgba(48, 77, 101, .08),
+        inset 0 1px 0 rgba(255,255,255,.72),
+        inset 0 -1px 0 rgba(255,255,255,.22) !important;
+}
+
+
+/* ===== SLIM MARQUEE NOTE BELOW THE TOP NAVIGATION ===== */
+.music-info-strip {
+    position: fixed;
+    top: var(--top-nav-height, 54px);
+    left: 0;
+    width: 100%;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    z-index: 1099;
+    box-sizing: border-box;
+    background: rgba(244, 249, 253, .98);
+    border-bottom: 1px solid #d5e5f0;
+    color: #547d99;
+    font: 9px 'DM Mono', monospace;
+    letter-spacing: .15px;
+    white-space: nowrap;
+}
+.music-info-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    min-width: max-content;
+    animation: musicInfoMarquee 42s linear infinite;
+}
+.music-info-track span {
+    display: inline-block;
+    padding-right: 70px;
+}
+.music-info-strip:hover .music-info-track {
+    animation-play-state: paused;
+}
+@keyframes musicInfoMarquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* Reserve space for both fixed top strips. */
+.layout {
+    height: calc(100vh - var(--top-nav-height) - 22px - var(--music-strip-height));
+    margin-top: calc(var(--top-nav-height) + 22px);
+}
+@media (max-width: 750px) {
+    .music-info-strip {
+        top: 50px;
+        height: 21px;
+        font-size: 8px;
+    }
+    .layout {
+        height: auto;
+        min-height: calc(100vh - 50px - 21px - 35px);
+        margin-top: 71px;
+        margin-bottom: 35px;
+    }
+}
+
+
+/* ===== CENTER THE MUSIC DETAILS AND CONTROLS IN THE BOTTOM STRIP ===== */
+.music-player {
+    justify-content: center !important;
+    gap: 22px;
+}
+
+.music-player .music-info {
+    flex: 0 1 auto;
+    justify-content: center;
+    gap: 7px;
+}
+
+.music-player .music-controls {
+    flex: 0 0 auto;
+    justify-content: center;
+    gap: 12px;
+}
+
+@media (max-width: 750px) {
+    .music-player {
+        justify-content: center !important;
+        gap: 12px;
+        padding: 0 8px;
+    }
+
+    .music-player .music-info {
+        gap: 5px;
+    }
+
+    .music-player .music-title {
+        font-size: 10px;
+    }
+
+    .music-player .music-artist {
+        font-size: 8px;
+    }
+
+    .music-player .music-controls {
+        gap: 8px;
+    }
+}
+
+
+/* TIC-TAC-TOE MODE SELECTION */
+.tic-mode-picker {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin: 17px 0 8px;
+}
+.tic-mode-picker[hidden],
+#ticGameArea[hidden] { display: none !important; }
+.tic-mode-caption {
+    margin-top: 15px;
+    color: #7890a2;
+    text-align: center;
+    font: 10px 'DM Mono', monospace;
+    letter-spacing: .35px;
+}
+
+
+
+/* ===== INDIVIDUAL BUTTONS FOR THE TOP NAVIGATION ===== */
+.top-navigation {
+    gap: 9px !important;
+}
+
+.top-navigation a {
+    flex: 0 0 auto;
+    justify-content: center;
+    padding: 9px 13px;
+    border: 1px solid rgba(107, 151, 184, .28);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, .48);
+    color: #52718a;
+    transition: background .2s ease, border-color .2s ease,
+                color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.top-navigation a:hover {
+    padding-left: 13px;
+    background: rgba(255, 255, 255, .88);
+    border-color: rgba(76, 133, 177, .55);
+    color: #1f6598;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 9px rgba(54, 101, 139, .09);
+}
+
+.top-navigation a span {
+    color: #263f54;
+}
+
+.top-navigation a i {
+    color: #4384b4;
+}
+
+@media (max-width: 750px) {
+    .top-navigation {
+        justify-content: flex-start !important;
+        gap: 6px !important;
+        padding: 0 9px !important;
+        overflow-x: auto !important;
+        overflow-y: hidden;
+        scrollbar-width: none;
+    }
+
+    .top-navigation::-webkit-scrollbar {
+        display: none;
+    }
+
+    .top-navigation a {
+        flex: 0 0 auto !important;
+        min-width: max-content;
+        padding: 7px 9px;
+        gap: 4px;
+        border-radius: 7px;
+        font-size: 8px;
+        white-space: nowrap;
+    }
+
+    .top-navigation a:hover {
+        padding-left: 9px;
+    }
+
+    .top-navigation a span {
+        font-size: clamp(8px, 2.5vw, 10px);
+        letter-spacing: -.15px;
+    }
+}
+
+@media (max-width: 360px) {
+    .top-navigation {
+        gap: 5px !important;
+        padding: 0 7px !important;
+    }
+
+    .top-navigation a {
+        padding: 6px 8px;
+    }
+}
+
+
+
+/* ===== IN-PAGE KARAOKE LYRICS ===== */
+.lyrics-toggle {
+    white-space: nowrap;
+    padding: 4px 9px;
+    border: 1px solid rgba(75,119,151,.24);
+    border-radius: 5px;
+    font: 10px 'DM Mono', monospace;
+}
+.lyrics-panel {
+    position: fixed;
+    right: 18px;
+    bottom: calc(var(--music-strip-height, 35px) + 12px);
+    z-index: 1300;
+    width: min(350px, calc(100vw - 28px));
+    max-height: min(490px, calc(100vh - 100px));
+    display: flex;
+    flex-direction: column;
+    padding: 15px 16px 12px;
+    border: 1px solid rgba(133,166,190,.52);
+    border-radius: 11px;
+    background: rgba(244,249,253,.97);
+    box-shadow: 0 10px 30px rgba(45,75,98,.2);
+    color: #344b5d;
+    backdrop-filter: blur(12px);
+}
+.lyrics-panel[hidden] { display: none; }
+.lyrics-panel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(111,146,172,.2);
+}
+.lyrics-panel-heading > div { display:flex; flex-direction:column; gap:3px; }
+.lyrics-eyebrow {
+    color: #7894a9;
+    font: 9px 'DM Mono', monospace;
+    letter-spacing: 1px;
+}
+#lyricsSongName { font: 600 14px 'DM Sans', sans-serif; }
+#lyricsSongArtist { color:#7890a2; font:11px 'DM Mono',monospace; }
+.lyrics-close {
+    border:0; background:transparent; color:#68849a;
+    font-size:22px; line-height:1; cursor:pointer;
+}
+.lyrics-seeker-wrap {
+    margin: 11px 0 7px;
+}
+.lyrics-seeker {
+    display:block; width:100%; height:5px; margin:0;
+    appearance:none; -webkit-appearance:none;
+    border-radius:99px; outline:none; cursor:pointer;
+    background:linear-gradient(to right, #6e9fc2 0%, #6e9fc2 0%, #dce8f0 0%, #dce8f0 100%);
+}
+.lyrics-seeker::-webkit-slider-thumb {
+    appearance:none; -webkit-appearance:none;
+    width:11px; height:11px; border-radius:50%;
+    background:#5f91b5; border:2px solid #f7fbfe;
+    box-shadow:0 1px 4px rgba(48,86,115,.25);
+}
+.lyrics-seeker::-moz-range-thumb {
+    width:8px; height:8px; border-radius:50%;
+    background:#5f91b5; border:2px solid #f7fbfe;
+    box-shadow:0 1px 4px rgba(48,86,115,.25);
+}
+.lyrics-seeker:focus-visible {
+    outline:2px solid rgba(95,145,181,.45); outline-offset:4px;
+}
+.lyrics-time-row {
+    display:flex; justify-content:space-between; align-items:center;
+    margin-top:6px; color:#8298a9;
+    font:9px 'DM Mono',monospace; font-variant-numeric:tabular-nums;
+}
+.lyrics-scroll {
+    overflow-y:auto; min-height:130px; max-height:300px;
+    padding:12px 5px 12px 1px; scroll-behavior:smooth;
+}
+.lyrics-lines { display:flex; flex-direction:column; gap:9px; }
+.lyric-line {
+    color:#9aabb8; font:12px/1.65 'DM Sans',sans-serif;
+    transition:color .25s ease, opacity .25s ease, transform .25s ease;
+    opacity:.72;
+}
+.lyric-line.active {
+    color:#286b9b; opacity:1; font-weight:700;
+    transform:translateX(3px);
+    text-shadow:0 0 12px rgba(86,151,194,.18);
+}
+.lyric-line.past { color:#8299aa; opacity:.48; }
+.lyrics-sync-note {
+    margin:0; padding-top:8px;
+    border-top:1px solid rgba(111,146,172,.2);
+    color:#8a9eae; font:9px/1.45 'DM Mono',monospace;
+}
+@media (max-width:750px) {
+    .lyrics-panel { right:10px; bottom:48px; max-height:min(440px,calc(100vh - 90px)); }
+    .lyrics-toggle { font-size:9px; padding:4px 6px; }
+}
+
+
+
+/* ===== NAVIGATION LINKS: PLAIN TEXT, NO INDIVIDUAL BUTTONS ===== */
+.top-navigation {
+    gap: clamp(18px, 4vw, 52px) !important;
+}
+
+.top-navigation a {
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    transform: none;
+}
+
+.top-navigation a:hover {
+    padding-left: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    transform: none;
+    color: #1f6598;
+}
+
+.top-navigation a:hover span {
+    color: #1f6598;
+}
+
+@media (max-width: 750px) {
+    .top-navigation {
+        gap: 0 !important;
+        padding: 0 8px !important;
+        justify-content: space-between !important;
+        overflow-x: hidden !important;
+    }
+
+    .top-navigation a {
+        flex: 1 1 20% !important;
+        min-width: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        justify-content: center;
+        white-space: nowrap;
+    }
+
+    .top-navigation a:hover {
+        padding-left: 0 !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- FIXED TOP NAVIGATION -->
+<nav class="top-navigation" aria-label="Main navigation">
+    <a href="#" data-page="home"><span>home</span></a>|
+    <a href="#" data-page="about"><span>about me</span></a>|
+    <a href="#" data-page="photography"><span>photo album</span></a>|
+    <a href="#" data-page="playroom"><span>the playroom</span></a>|
+    <a href="#" data-page="thoughtsPage"><span>little notes</span></a>
+</nav>
+
+<div class="music-info-strip" aria-label="Music player information">
+    <div class="music-info-track">
+        <span>♪ NOTE: Music starts playing after your first click anywhere on the page. Use the player strip at the bottom to play or pause, skip to the next track, or return to the previous one.</span>
+        <span aria-hidden="true">♪ NOTE: Music starts playing after your first click anywhere on the page. Use the player strip at the bottom to play or pause, skip to the next track, or return to the previous one.</span>
+    </div>
+</div>
+
+<div class="layout">
+
+    <!-- LEFT PROFILE COLUMN -->
+
+    <aside class="sidebar">
+
+       <img
+            class="profile-image"
+            src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476787/profile.jpg"
+            alt="Profile picture"
+        >
+
+        <h1 class="username">jinro velasquez.</h1>
+
+        <p class="handle">@allanjinro</p>
+
+        <p class="bio">
+            Hi! My name is Allan Jinro R. Velasquez I.
+            I am a student of FABINHS. I am from Grade 11-09.
+            <span>Living, learning, and figuring things out.</span>
+        </p>
+
+        <p class="section-label">find me elsewhere</p>
+
+        <div class="social-links">
+            <a href="https://www.facebook.com/jinro.velasquez.5/">facebook</a>
+            <a href="https://www.instagram.com/jnrove.l/">instagram</a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=velasquezjinro@gmail.com" target="_blank" rel="noopener noreferrer">email</a>
+        </div>
+
+        <div class="sidebar-footer">
+            © 2026 — truth in motion.
+        </div>
+
+    </aside>
+
+
+    <!-- RIGHT SCROLLABLE BLOG COLUMN -->
+
+    <main class="blog" id="home">
+
+        <header class="blog-header">
+            <span class="blog-title">truth in motion.</span>
+		<span class="status">performance task in creative composition</span>
+        </header>
+
+        <!-- POST 1 -->
+
+        <article class="post" id="thoughts">
+
+            <div class="post-meta">
+                <span>november 18, 2026</span>
+                <span>CREATIVE COMPOSITION</span>
+            </div>
+
+            <div class="post-content">
+            
+
+                <img
+                    class="post-image"
+                    src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795477077/bike.jpg"
+                    alt="Learning to ride a bicycle">
+
+               <h2>finding my balance: my first time riding a bicycle</h2>
+
+<p><em>Sometimes, learning something new takes more than just watching others do it. It takes patience, courage, and the willingness to try again.</em></p>
+
+<p><strong>Before the First Ride</strong></p>
+
+<p>Riding a bicycle always seemed easy to me. I had seen many people around me ride without any difficulty, so I assumed that learning how to ride one would be simple. I thought all I needed to do was sit on the bicycle, pedal, and steer in the right direction. I was excited to finally try it myself, especially since I had always wanted to learn how to ride on my own. However, I soon realized that it was not as easy as I had expected. It required more balance, patience, and confidence than I thought.</p>
+
+<p>When I first got on the bicycle and placed my feet on the pedals, I started feeling nervous. I was excited to learn, but at the same time, I was afraid of falling. As soon as I started moving, the bicycle began to wobble, and I struggled to keep my balance. I became tense and found it difficult to control my movements. Watching other people ride made it look effortless, but experiencing it myself was a completely different story.</p>
+
+<p><strong>The Struggle to Find Balance</strong></p>
+
+<p>My first few attempts were not easy. Even with someone helping me, I struggled to gain enough speed to keep the bicycle steady. Whenever I felt like I was losing control, my first reaction was to stop. There were even moments when I became so afraid of falling that I could barely bring myself to pedal. The uneven and bumpy ground made things more difficult, and I almost lost my balance several times.</p>
+
+<p>I also had a hard time coordinating my movements. Whenever I focused on pedaling, I struggled to control the handlebars. But when I concentrated on keeping my balance, I became too afraid to move forward. There were times when I had to stop and start all over again. It was frustrating because I wanted to learn as quickly as possible. However, I slowly realized that riding a bicycle was not just about pedaling and steering. It also required coordination, focus, and confidence.</p>
+
+<p><strong>Learning Through Practice</strong></p>
+
+<p>Even though I was struggling, I did not want to give up. I knew that learning how to ride a bicycle would take more than just one attempt, so I continued practicing and paid attention to the things I needed to improve. I tried to keep my feet in the right position, look straight ahead, control the handlebars, and become more comfortable with the movement of the bicycle.</p>
+
+<p>During the experience, I also received encouragement from the people helping me. They reminded me to stay calm, look forward, and keep trying. There were times when I wanted someone to hold the bicycle because I was not confident enough to ride by myself. Their encouragement helped me feel more comfortable, but I also realized that I needed to trust myself and make an effort.</p>
+
+<p>As I continued practicing, I slowly understood how to control the bicycle better. I learned to notice when it was leaning to either side and make small adjustments to keep my balance. I also realized that being too focused on the possibility of falling only made me more nervous. Little by little, I became more comfortable with pedaling, steering, and moving forward.</p>
+
+<p><strong>Finding My Confidence</strong></p>
+
+<p>After several attempts, I noticed that I was becoming less afraid of the bicycle's movements. I was slowly gaining confidence in keeping my balance and controlling its direction. Although I still had moments when I struggled, I could clearly see that I was improving compared to when I first started.</p>
+
+<p>Eventually, I reached the point where I could ride on my own. It may seem like a small achievement to some people, but it meant a lot to me because I knew how much effort it took to get there. I felt proud of myself for overcoming something that had made me so nervous at first. Being able to ride without depending on someone to hold the bicycle was a great feeling.</p>
+
+<p>What made the experience special was not just learning how to ride, but also knowing that I did not give up even when things became difficult. Looking back, I realized that every attempt helped me get closer to achieving something I had wanted to do for a long time.</p>
+
+<p><strong>More Than Just Riding a Bicycle</strong></p>
+
+<p>My first experience of riding a bicycle taught me more than just a new skill. It made me realize that watching someone do something is very different from actually trying it yourself. Something that looks easy from the outside can require a lot of practice, patience, and effort.</p>
+
+<p>I also learned that making mistakes is a normal part of learning. There were moments when I felt embarrassed because I could not do it right away. However, I eventually understood that nobody becomes good at something without practice. Every attempt, even the unsuccessful ones, helped me understand what I needed to improve. Instead of feeling disappointed, I learned to focus on the progress I was making.</p>
+
+<p>Most importantly, I learned that believing in myself is just as important as receiving encouragement from others. Although the people around me helped me gain confidence, I still had to overcome my own fear and put in the effort. I realized that learning something new takes time, and I should not be too hard on myself when I make mistakes.</p>
+
+<p><strong>Looking Back</strong></p>
+
+<p>Overall, my first time riding a bicycle was a memorable experience because it taught me the value of patience and determination. From being nervous and struggling to keep my balance to eventually riding on my own, I experienced how small improvements can lead to something I once thought was difficult to achieve.</p>
+
+<p>This experience reminded me that I should not expect myself to learn everything immediately, especially when I am trying something new. Instead, I should give myself enough time to practice, make mistakes, and improve along the way.</p>
+
+<p>What started as a simple attempt to learn how to ride a bicycle eventually became a lesson about confidence, patience, and determination. I may have struggled during my first few attempts, but I am proud that I continued trying until I finally learned how to ride on my own. It showed me that sometimes, the best way to overcome a challenge is simply to keep going, even when things do not work out the first time.
+</p>
+
+<img
+    class="post-image"
+    src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476780/bike2.jpg"
+    alt="bike">
+
+<p class="blue">
+    <em>I thought all it took was a little pedaling and a steady hand. Turns out, finding my balance required a little patience, a few mistakes, and a reason not to give up.</em>
+</p>
+            </div>
+
+            <div class="post-footer">
+                <span class="tag">#personal #performancetask #bicycle #firsttimeridingabicycle</span>
+                <span>♡ 143 notes</span>
+            </div>
+
+        </article>
+
+
+<!-- POST 2 -->
+
+<article class="post">
+
+    <div class="post-meta">
+        <span>october 7, 2026</span>
+        <span>MEMORIES</span>
+    </div>
+
+    <div class="post-content">
+
+        <img
+            class="post-image"
+            src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476784/hbd.jpg"
+            alt="hbd">
+
+<h2>18th.</h2>       
+
+<p class="blue">
+    <em>As I welcome another year, I find myself reflecting on the little things that have made life meaningful. With it came lessons, changes, challenges, and moments that reminded me just how beautiful life can be. I am grateful to God for every breath, every opportunity, and every blessing…especially those that come quietly, through the people He places in my life. Perhaps the older I get, the more I realize that the sweetest parts of life aren't always the grandest ones. Sometimes, they're found in a simple celebration, a thoughtful gesture, and the feeling of being remembered.</em>
+</p>
+
+    </div>
+
+    <div class="post-footer">
+        <span class="tag">#birthday</span>
+        <span>♡ 121 notes</span>
+    </div>
+
+</article>
+
+
+<!-- POST 3 -->
+
+        <article class="post">
+
+            <div class="post-meta">
+                <span>september 19, 2026</span>
+                <span>QUOTE</span>
+            </div>
+
+            <div class="post-content">
+                <div class="quote">
+                    “Some lessons come from books, others come from experience.”
+                </div>
+            </div>
+
+            <div class="post-footer">
+                <span class="tag">#thoughts #words</span>
+                <span>♡ 105 notes</span>
+            </div>
+
+        </article>
+
+
+        <!-- CIGARETTE POST -->
+
+        <article class="post">
+
+            <div class="post-meta">
+                <span>august 25, 2026</span>
+                <span>CREATIVE COMPOSITION</span>
+            </div>
+
+            <div class="post-content">
+                <h2>deadly relief.</h2>
+
+                <em><p class="blue">You light a cigarette when your head gets loud,<br>
+watching the smoke slowly fade into the crowd.<br>
+For a moment, your worries seem to slow,<br>
+like the smoke takes your problems when you let it go.<br>
+</p>
+
+<p class="blue">It kills your anxiety, it kills the time,<br>
+makes everything feel okay for a little while.<br>
+The smoke feels good, the silence feels right,<br>
+like you finally found peace in the middle of the night.
+</p>
+
+<p class="blue">It clears your head while your body takes the hit,<br>
+making you feel better while slowly damaging it.<br>
+But isn’t it strange that you feel so light,<br>
+while every breath makes your body lose its fight?
+</p>
+
+<p class="blue">So maybe the smoke kills, but not what you thought,<br>
+it kills the stress while slowly killing you off.<br>
+You breathe in for peace, then breathe out what you lose,<br>
+sometimes what feels good, is what you shouldn’t choose.
+</p></em>
+
+                <video class="post-video" controls playsinline preload="auto">
+                    <source src="https://res.cloudinary.com/tumhfwoi/video/upload/v1795476663/cigarette.mp4" type="video/mp4">
+                </video>
+<br>
+<p>This was one of my performance tasks for Creative Composition during the first term. I wrote this poem to explore the irony of finding comfort in something that slowly harms you.</p>
+
+<p>The idea behind it is how some people turn to smoking whenever life gets a little too overwhelming. When thoughts get too loud, problems become too much, or anxiety takes over, a cigarette can seem like a temporary escape. For a moment, everything feels lighter, quieter, and easier to deal with. But what happens when the very thing you turn to for relief is slowly taking something away from you?</p>
+
+<p>I wanted to highlight how easily we can become focused on the temporary comfort smoking seems to provide that we forget to acknowledge what it does to our bodies. While we pay attention to the brief sense of calm, we often overlook the physical damage happening with every inhale. The smoke may seem to take away the stress, but it also exposes the body to harmful substances that put our health at risk. In a way, we become so occupied with finding relief from what's happening in our minds that we fail to notice what we're putting our bodies through.</p>
+
+<p>I wanted to portray that idea not only through words but also through actions. That's why I created a video where I played the character in the poem, bringing each line to life through visuals. The cigarette, the smoke, the silence, and the little moments in between were all part of expressing what the poem was trying to say.</p>
+
+<p>For me, <em>Deadly Relief</em> is about the difference between temporary comfort and genuine peace. It's a reminder that not everything that makes us feel better is necessarily good for us. Sometimes, we mistake an escape for a solution, choosing what gives us immediate comfort without considering the consequences that come with it.</p>
+
+<p>After all, <em>what good is finding temporary peace if, along the way, we're slowly putting our own lives at risk?</em></p>
+
+            </div>
+
+            <div class="post-footer">
+                <span class="tag">#video #creativecomposition #deadlyrelief #poem</span>
+                <span>♡ 143 notes</span>
+            </div>
+
+        </article>
+
+        <!-- BASKETBALL PHOTOGRAPHY POST -->
+
+        <article class="post" id="basketball">
+
+            <div class="post-meta">
+                <span>august 1, 2026</span>
+                <span>HOBBIES</span>
+            </div>
+
+            <div class="post-content">
+                <h2>basketball.</h2>
+
+                <p>
+                    Basketball has always been one of the things I genuinely enjoy, and moments like this make it even more special. It’s not just about playing the game I love, but also about having someone beside me who takes the time to be part of it, even if it’s not necessarily her thing. From throwing the ball back to me to simply being there and sharing these little moments, I appreciate her support more than words can say. It’s a different kind of happiness when you get to enjoy what you love with someone who makes an effort to be part of it.
+                </p>
+
+                <img
+                    class="post-image"
+                    src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476778/basketball.jpg"
+                    alt="Basketball">
+
+            </div>
+
+            <div class="post-footer">
+                <span class="tag">#basketball #sports #hobbies</span>
+                <span>♡ 121 notes</span>
+            </div>
+
+        </article>
+
+        <!-- VIDEO POST -->
+
+        <article class="post">
+
+            <div class="post-meta">
+                <span>july 20, 2026</span>
+                <span>MABISANG KOMUNIKASYON</span>
+            </div>
+
+            <div class="post-content">
+                <h2>aking lakbay buhay!</h2>
+
+                <p>Some places become special not only because of their beauty, history, or the experiences they offer, but because of the people we share those moments with.</p>
+
+                <p>For my performance task in <em>Mabisang Komunikasyon</em>, entitled <em>“Aking Lakbay Buhay!”</em>, I chose the Town of Taal as one of the most important places I have visited.</p>
+
+                <p>Among the many places I have been to, Taal holds a special place in my heart because it is where I got to create meaningful memories with someone important to me. From exploring its lively public market and tasting its well-known delicacies to appreciating the peaceful atmosphere of the Basilica, every moment became a memory worth keeping.</p>
+
+                <p>This journey taught me that traveling is not simply about discovering new places. It is also about appreciating history, culture, faith, and, most importantly, the people who make ordinary experiences extraordinary.</p>
+
+                <p>Looking back, I realized that a place does not necessarily have to be somewhere extraordinary to become unforgettable. Sometimes, what makes it special is the experience, the feelings, and the person you shared it with.</p>
+
+                <p>As I said at the end of my video:<br>
+                <em>”Dahil ang lugar ay maaaring maganda sa mata, ngunit ang taong kasama ang siyang nagpapaganda sa alaala.”</em></p>
+
+                <p>A simple journey, a beautiful town, and memories that will always have a special place in my heart.</p>
+
+                <em><p>Isang paglalakbay na hindi lamang tungkol sa lugar, kundi tungkol sa mga alaalang mananatili.</p></em>
+
+                <video class="post-video" controls playsinline preload="auto">
+                    <source src="https://res.cloudinary.com/tumhfwoi/video/upload/v1795476691/lakbaybuhay.mp4" type="video/mp4">
+                    Your browser does not support this video.
+                </video>
+
+            </div>
+
+            <div class="post-footer">
+                <span class="tag">#lakbaybuhay #mabisangkomunikasyon #memories</span>
+                <span>♡ 143 notes</span>
+            </div>
+
+        </article>
+
+        <!-- POST 7 -->
+
+        <article class="post">
+
+            <div class="post-meta">
+                <span>june 14, 2026</span>
+                <span>QUOTE</span>
+            </div>
+
+            <div class="post-content">
+                <div class="quote">
+                    “There's no need to have it all figured out. Just make sure you're making the most of the life you're given.”
+                </div>
+            </div>
+
+            <div class="post-footer">
+                <span class="tag">#thoughts #words</span>
+                <span>♡ 123 notes</span>
+            </div>
+
+        </article>
+
+        <!-- POST 8 -->
+
+        <article class="post">
+
+            <div class="post-meta">
+                <span>june 9, 2026</span>
+                <span>PERSONAL</span>
+            </div>
+
+            <div class="post-content">
+                <h2>currently into.</h2>
+
+                <p>
+                    Music that I can listen to for hours.
+                    Late afternoon walks. Taking pictures of random
+                    things. Good conversations. Learning something new.
+                </p>
+
+                <p>
+                    Trying to enjoy the little things more.
+                </p>
+            </div>
+
+            <div class="post-footer">
+                <span class="tag">#currently #life</span>
+                <span>♡ 119 notes</span>
+            </div>
+
+        </article>
+
+        <!-- POST 9 -->
+
+        <article class="post">
+
+            <div class="post-meta">
+                <span>may 20, 2026</span>
+                <span>MEMORIES</span>
+            </div>
+
+            <div class="post-content">
+
+                <h2>mythical five. inter-purok league.</h2>
+
+                <img
+                    class="post-image"
+                    src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476787/mythical5.jpg"
+                    alt="Mythical Five">
+
+                <p style="margin-top: 15px;">
+                    A moment I'll always be happy to look back on. Being part of the <strong>Mythical Five</strong> of the Sangguniang Kabataan ng Barangay Tambo Basketball League 2026, while our team finished as 2nd Runner-Up, is something I'm truly grateful for.
+                </p>
+
+                <p style="margin-top: 15px;">
+                    More than the recognition itself, what made this experience special was the happiness I felt throughout the journey. Getting to play the game I love, share the court with great teammates, compete, and see our hard work turn into something worth celebrating made everything memorable. It was one of those moments when I couldn't help but feel proud and genuinely happy.
+                </p>
+
+                <p style="margin-top: 15px;">
+                    A little recognition, a lot of memories, and another experience to carry with me. Grateful for this one.
+                </p>
+
+            </div>
+
+            <div class="post-footer">
+                <span class="tag">#basketball #mythicalfive #interpurokleague</span>
+                <span>♡ 112 notes</span>
+            </div>
+
+        </article>
+
+
+<!-- POST 10 -->
+
+<article class="post">
+
+    <div class="post-meta">
+        <span>april 25, 2026</span>
+        <span>MEMORIES</span>
+    </div>
+
+    <div class="post-content">
+
+        <h2>eba sportsfest 2026. inter-barangay league.</h2>
+
+        <img
+            class="post-image"
+            src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476781/divine.jpg"
+            alt="Representing Barangay Tambo at EBA Sportsfest 2026">
+
+        <p style="margin-top: 15px;">
+            Truly grateful to have been given the opportunity to be part of Barangay Tambo's delegation for the EBA Sportsfest 2026 Inter-Barangay League. Being able to represent our barangay and take part in an experience like this is something I genuinely appreciate.
+        </p>
+
+        <p style="margin-top: 15px;">
+            My sincere thanks to the Sangguniang Kabataan of Barangay Tambo for trusting me and giving me the opportunity to participate. I appreciate the effort, support, and opportunities you continue to provide for the youth of our community. It means a lot to be included and to have the chance to represent the barangay in something I truly enjoy.
+        </p>
+
+        <p style="margin-top: 15px;">
+            More than the competition itself, I am thankful for the experience, the people I got to share it with, and the memories I get to take home. It was an opportunity I will always look back on with appreciation.
+        </p>
+
+        <p style="margin-top: 15px;">
+            Proud to have represented Barangay Tambo. Thankful for the opportunity, and grateful to everyone who made this experience possible.
+        </p>
+
+    </div>
+
+    <div class="post-footer">
+        <span class="tag">#basketball #ebasportsfest #interbrgyleague #barangaytambo</span>
+        <span>♡ 121 notes</span>
+    </div>
+
+</article>
+
+        <footer style="
+            text-align:center;
+            padding:25px 0;
+            font-family:'DM Mono',monospace;
+            font-size:10px;
+            color:#a0a7b0;">
+            jinro velasquez | g11-09
+        </footer>
+
+    </main>
+
+
+    <!-- ABOUT ME PAGE -->
+
+    <main class="blog page" id="aboutPage" hidden>
+
+        <header class="blog-header">
+            <span class="blog-title">a little about me.</span>
+            <span class="status">personal page</span>
+        </header>
+
+        <article class="post">
+            <div class="post-content">
+
+                <h2>hello, i'm jinro.</h2>
+
+                <p>
+                    My name is Allan Jinro R. Velasquez, an 18-year-old guy born on October 7, 2008.
+                </p>
+
+                <p>
+                    I'm currently studying at Fernando Air Base Integrated National High School, under Grade 11–09. I'm someone who's still learning, growing, and figuring out what life has to offer. I believe that there's always room for improvement, whether it's in the way I think, the way I live, or the person I am becoming.
+                </p>
+
+                <p>
+                    I created this blog as a personal space to document different parts of my life. It's where I keep memories, share experiences, write down thoughts, and look back on the moments that make up my story.
+                </p>
+
+                <img
+                    class="post-image"
+                    src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476787/picaboutme.jpg"
+                    alt="A photograph of me">
+
+            </div>
+        </article>
+
+        <article class="post">
+            <div class="post-content">
+
+                <h2>family & relationship.</h2>
+
+                <p>
+                    I was born to my parents, Lota and Allan, who have been part of my life since the very beginning. They're the people I look up to, the ones who have guided me through different stages of life, and a big part of the person I am today. I'm grateful for the lessons they've taught me, the sacrifices they've made, and the support they've given me along the way. No matter where life takes me, they'll always be an important part of my story.
+                </p>
+
+                <p>
+                    I'm also lucky to have Nina, my girlfriend, who has always been kind and supportive of me and the things I do. She's also part of some of my creative work…some of the clips in the videos I've edited for school projects were captured by her, and she often helps me bring those projects together. I appreciate having someone who supports not only me but also the things I'm passionate about.
+                </p>
+
+
+            </div>
+        </article>
+
+        <article class="post">
+
+            <div class="post-content">
+
+                <h2>things i love.</h2>
+
+                <p>
+                    <strong>Basketball.</strong> One of the things I genuinely enjoy doing. Whether it's playing with friends, practicing, competing, or simply spending time on the court, basketball is something I always make time for.
+                </p>
+
+                <p>
+                    <strong>Going to the gym.</strong> Another part of my routine that I enjoy. I like working on my strength, improving my physique, and challenging myself to become better. It's about discipline, consistency, and seeing progress through effort.
+                </p>
+
+                <p>
+                    <strong>Other little interests.</strong> I enjoy listening to music, taking pictures, spending time with the people close to me, and collecting memories from ordinary days. I appreciate experiences that give me something to look back on.
+                </p>
+
+                <p>
+                    At the end of the day, I just want to keep doing what I love, experience more of life, and become a better version of myself along the way.
+                </p>
+
+            </div>
+
+        </article>
+
+        <footer style="
+            text-align:center;
+            padding:25px 0;
+            font-family:'DM Mono',monospace;
+            font-size:10px;
+            color:#a0a7b0;">
+            jinro velasquez | g11-09
+        </footer>
+
+    </main>
+
+    
+<!-- PHOTO ALBUM PAGE -->
+
+<main class="blog page" id="photographyPage" hidden>
+
+    <header class="blog-header">
+        <span class="blog-title">collected moments.</span>
+        <span class="status">photo album</span>
+    </header>
+
+    <!-- FIRST COLLECTION: PHOTOS 1 TO 10 -->
+
+    <article class="post">
+
+        <div class="post-content">
+            <h2>little pieces of life.</h2>
+            <p>
+                A collection of places, people, experiences,
+                and little moments I want to keep.
+                Some memories are better kept in photographs.
+            </p>
+        </div>
+
+        <div class="marquee-container">
+
+            <button class="marquee-arrow left" id="marqueeLeft"
+                type="button" aria-label="Previous photos">
+                &#8249;
+            </button>
+
+            <button class="marquee-arrow right" id="marqueeRight"
+                type="button" aria-label="Next photos">
+                &#8250;
+            </button>
+
+            <div class="marquee-window" id="photoMarquee">
+                <div class="marquee-track">
+
+                    <!-- FIRST SET OF 10 PHOTOS -->
+
+                    <div class="marquee-group">
+
+                        <button type="button" class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476752/1.jpg" alt="Photo 1">
+                            <span class="photo-caption">something for my girl.</span>
+                        </button>
+
+                        <button type="button" class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476753/2.jpg" alt="Photo 2">
+                            <span class="photo-caption">studying.</span>
+                        </button>
+
+                        <button type="button" class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476755/3.jpg" alt="Photo 3">
+                            <span class="photo-caption">gym day.</span>
+                        </button>
+
+                        <button type="button" class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476756/4.jpg" alt="Photo 4">
+                            <span class="photo-caption">gym with my girl.</span>
+                        </button>
+
+                        <button type="button" class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476757/5.jpg" alt="Photo 5">
+                            <span class="photo-caption">brother.</span>
+                        </button>
+
+                        <button type="button" class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476758/6.jpg" alt="Photo 6">
+                            <span class="photo-caption">mandatory gym pic.</span>
+                        </button>
+
+                        <button type="button" class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476759/7.jpg" alt="Photo 7">
+                            <span class="photo-caption">friends.</span>
+                        </button>
+
+                        <button type="button" class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476761/8.jpg" alt="Photo 8">
+                            <span class="photo-caption">mandatory gym pic with my girl.</span>
+                        </button>
+
+                        <button type="button" class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476762/9.jpg" alt="Photo 9">
+                            <span class="photo-caption">claw machine master.</span>
+                        </button>
+
+                        <button type="button" class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476763/10.jpg" alt="Photo 10">
+                            <span class="photo-caption">drive.</span>
+                        </button>
+
+                    </div>
+
+                    <!-- DUPLICATE SET FOR CONTINUOUS LOOP -->
+
+                    <div class="marquee-group" aria-hidden="true">
+
+                        <div class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476752/1.jpg" alt="">
+                            <span class="photo-caption">something for my girl.</span>
+                        </div>
+
+                        <div class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476753/2.jpg" alt="">
+                            <span class="photo-caption">studying.</span>
+                        </div>
+
+                        <div class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476755/3.jpg" alt="">
+                            <span class="photo-caption">gym day.</span>
+                        </div>
+
+                        <div class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476756/4.jpg" alt="">
+                            <span class="photo-caption">gym with my girl.</span>
+                        </div>
+
+                        <div class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476757/5.jpg" alt="">
+                            <span class="photo-caption">brother.</span>
+                        </div>
+
+                        <div class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476758/6.jpg" alt="">
+                            <span class="photo-caption">mandatory gym pic.</span>
+                        </div>
+
+                        <div class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476759/7.jpg" alt="">
+                            <span class="photo-caption">friends.</span>
+                        </div>
+
+                        <div class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476761/8.jpg" alt="">
+                            <span class="photo-caption">mandatory gym pic with my girl.</span>
+                        </div>
+
+                        <div class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476762/9.jpg" alt="">
+                            <span class="photo-caption">claw machine master.</span>
+                        </div>
+
+                        <div class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476763/10.jpg" alt="">
+                            <span class="photo-caption">drive.</span>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </article>
+
+    <!-- IMPORTANT: FIRST ARTICLE CLOSES HERE -->
+
+    <!-- CHILDHOOD MEMORIES COLLECTION -->
+
+    <article class="post">
+
+        <div class="post-content">
+            <h2>childhood memories.</h2>
+
+            <p>
+                Little moments from the days when everything felt
+                a little simpler. A collection of memories from
+                my younger years, reminding me of where it all began
+                and how far I've come.
+            </p>
+        </div>
+
+        <!-- CHILDHOOD PHOTO MARQUEE -->
+
+        <div class="marquee-container" id="childhoodAlbum">
+
+            <button class="marquee-arrow left"
+                id="marqueeLeftYoung"
+                type="button"
+                aria-label="Previous childhood photos">
+                &#8249;
+            </button>
+
+            <button class="marquee-arrow right"
+                id="marqueeRightYoung"
+                type="button"
+                aria-label="Next childhood photos">
+                &#8250;
+            </button>
+
+            <div class="marquee-window">
+                <div class="marquee-track">
+
+                    <!-- FIRST SET: PHOTOS 11 TO 20 -->
+
+                    <div class="marquee-group">
+
+                        <button type="button" class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476764/11.jpg" alt="Childhood memory 11">
+                            <span class="photo-caption">little me.</span>
+                        </button>
+
+                        <button type="button" class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476765/12.jpg" alt="Childhood memory 12">
+                            <span class="photo-caption">growing up.</span>
+                        </button>
+
+                        <button type="button" class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476767/13.jpg" alt="Childhood memory 13">
+                            <span class="photo-caption">with my lolo.</span>
+                        </button>
+
+                        <button type="button" class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476768/14.jpg" alt="Childhood memory 14">
+                            <span class="photo-caption">with my brother, angelo.</span>
+                        </button>
+
+                        <button type="button" class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476769/15.jpg" alt="Childhood memory 15">
+                            <span class="photo-caption">with my brother, justine.</span>
+                        </button>
+
+                        <button type="button" class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476771/16.jpg" alt="Childhood memory 16">
+                            <span class="photo-caption">once upon a time.</span>
+                        </button>
+
+                        <button type="button" class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476776/17.jpg" alt="Childhood memory 17">
+                            <span class="photo-caption">little moments.</span>
+                        </button>
+
+                        <button type="button" class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476774/18.jpg" alt="Childhood memory 18">
+                            <span class="photo-caption">back in the day.</span>
+                        </button>
+
+                        <button type="button" class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476775/19.jpg" alt="Childhood memory 19">
+                            <span class="photo-caption">memories that stayed.</span>
+                        </button>
+
+                        <button type="button" class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476776/20.jpg" alt="Childhood memory 20">
+                            <span class="photo-caption">forever a part of me.</span>
+                        </button>
+
+                    </div>
+
+                    <!-- DUPLICATE SET FOR SEAMLESS LOOP -->
+
+                    <div class="marquee-group" aria-hidden="true">
+
+                        <div class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476764/11.jpg" alt="">
+                            <span class="photo-caption">little me.</span>
+                        </div>
+
+                        <div class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476765/12.jpg" alt="">
+                            <span class="photo-caption">growing up.</span>
+                        </div>
+
+                        <div class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476767/13.jpg" alt="">
+                            <span class="photo-caption">with my lolo.</span>
+                        </div>
+
+                        <div class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476768/14.jpg" alt="">
+                            <span class="photo-caption">with my brother, angelo.</span>
+                        </div>
+
+                        <div class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476769/15.jpg" alt="">
+                            <span class="photo-caption">with my brother, justine.</span>
+                        </div>
+
+                        <div class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476771/16.jpg" alt="">
+                            <span class="photo-caption">once upon a time.</span>
+                        </div>
+
+                        <div class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476776/17.jpg" alt="">
+                            <span class="photo-caption">little moments.</span>
+                        </div>
+
+                        <div class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476774/18.jpg" alt="">
+                            <span class="photo-caption">back in the day.</span>
+                        </div>
+
+                        <div class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476775/19.jpg" alt="">
+                            <span class="photo-caption">memories that stayed.</span>
+                        </div>
+
+                        <div class="photo-card">
+                            <img class="album-photo" src="https://res.cloudinary.com/tumhfwoi/image/upload/v1795476776/20.jpg" alt="">
+                            <span class="photo-caption">forever a part of me.</span>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </article>
+
+    <footer style="
+        text-align:center;
+        padding:25px 0;
+        font-family:'DM Mono',monospace;
+        font-size:10px;
+        color:#a0a7b0;">
+        jinro velasquez | g11-09
+    </footer>
+
+</main>
+
+
+<!-- PAGE 04 — THE PLAYROOM -->
+<main class="blog page" id="playroomPage" hidden>
+    <header class="blog-header">
+        <span class="blog-title">the playroom.</span>
+        <span class="status">a little fun between the lines</span>
+    </header>
+
+    <div class="feature-intro">
+  
+        <h2 style="font-size:23px;color:#252d39;margin-bottom:8px;">take a little break.</h2>
+        <p>A few small games to wake up your curiosity. Pick a challenge, trust your instincts, and have fun.</p>
+    </div>
+
+    <section class="feature-card" id="triviaCard">
+        <div class="mini-label">01 / quick trivia</div>
+        <p style="margin:7px 0 14px;color:#7d8998;font-size:12px;">5 random questions from a bank of 50. Your results will be revealed after you submit your answers.</p>
+        <div id="triviaQuiz">
+            <h2 id="triviaQuestion">Loading a little question...</h2>
+            <div class="trivia-options" id="triviaOptions"></div>
+            <p class="feature-feedback" id="triviaFeedback" aria-live="polite">Choose one answer to continue.</p>
+            <div class="feature-actions">
+                <button class="feature-button" id="prevTrivia" type="button">← previous</button>
+                <button class="feature-button" id="nextTrivia" type="button">next question →</button>
+                <button class="feature-button" id="submitTrivia" type="button" style="display:none;">submit answers ✓</button>
+                <span id="triviaProgress" style="align-self:center;color:#9aa3ae;font:10px 'DM Mono',monospace;"></span>
+            </div>
+        </div>
+        <div id="triviaResults" style="display:none;"></div>
+    </section>
+
+    <section class="feature-card" id="wordCard">
+        <div class="mini-label">02 / five-letter word</div>
+        <h2>five letters, one word.</h2>
+        <p>Guess the hidden five-letter word in six tries. Green means the letter is in the right place; yellow means it belongs somewhere else.</p>
+        <p id="wordHint" style="margin-top:8px;color:#8a78a8;">hint: loading...</p>
+        <div class="word-slots" id="wordSlots" aria-label="Current guess">
+            <span>·</span><span>·</span><span>·</span><span>·</span><span>·</span>
+        </div>
+        <form id="wordForm">
+            <input class="feature-input" id="wordGuess" type="text" maxlength="5" minlength="5"
+                pattern="[A-Za-z]{5}" autocomplete="off" placeholder="type a five-letter word" aria-label="Your five-letter guess" required>
+            <div class="feature-actions">
+                <button class="feature-button" type="submit">check word</button>
+                <button class="feature-button secondary" id="resetWord" type="button">start again</button>
+            </div>
+        </form>
+        <div class="guess-list" id="guessList"></div>
+        <p class="feature-feedback" id="wordFeedback" aria-live="polite"></p>
+    </section>
+
+    <section class="feature-card" id="ticCard">
+        <div class="mini-label">03 / tic-tac-toe</div>
+        <h2>your move.</h2>
+        <p>Choose how you'd like to play: challenge the computer or take turns with a friend on the same screen.</p>
+        <div class="tic-mode-picker" id="ticModePicker">
+            <button class="feature-button" type="button" data-tic-mode="computer">play vs computer</button>
+            <button class="feature-button secondary" type="button" data-tic-mode="friend">play with a friend</button>
+        </div>
+        <div class="tic-mode-picker" id="ticSymbolPicker" hidden>
+            <p class="tic-mode-caption">Which side would you like to play?</p>
+            <button class="feature-button" type="button" data-player-mark="X">play as X</button>
+            <button class="feature-button secondary" type="button" data-player-mark="O">play as O</button>
+        </div>
+        <div id="ticGameArea" hidden>
+        <p class="tic-mode-caption" id="ticModeCaption">you (X) vs computer (O)</p>
+        <div class="tic-board" id="ticBoard" aria-label="Tic tac toe board">
+            <button class="tic-cell" type="button" data-cell="0" aria-label="Cell 1"></button>
+            <button class="tic-cell" type="button" data-cell="1" aria-label="Cell 2"></button>
+            <button class="tic-cell" type="button" data-cell="2" aria-label="Cell 3"></button>
+            <button class="tic-cell" type="button" data-cell="3" aria-label="Cell 4"></button>
+            <button class="tic-cell" type="button" data-cell="4" aria-label="Cell 5"></button>
+            <button class="tic-cell" type="button" data-cell="5" aria-label="Cell 6"></button>
+            <button class="tic-cell" type="button" data-cell="6" aria-label="Cell 7"></button>
+            <button class="tic-cell" type="button" data-cell="7" aria-label="Cell 8"></button>
+            <button class="tic-cell" type="button" data-cell="8" aria-label="Cell 9"></button>
+        </div>
+        <p class="feature-feedback" id="ticStatus" aria-live="polite" style="text-align:center;">Player X's turn.</p>
+        <div class="feature-actions" style="justify-content:center;">
+            <button class="feature-button secondary" id="resetTic" type="button">play again</button>
+            <button class="feature-button secondary" id="changeTicMode" type="button">change mode</button>
+        </div>
+        </div>
+    </section>
+
+    <footer style="text-align:center;padding:25px 0;font:10px 'DM Mono',monospace;color:#a0a7b0;">jinro velasquez | g11-09</footer>
+</main>
+
+<!-- PAGE 05 — THOUGHTS & GUESTBOOK -->
+<main class="blog page" id="thoughtsPage" hidden>
+    <header class="blog-header">
+        <span class="blog-title">little notes.</span>
+        <span class="status">thoughts to keep & words to leave</span>
+    </header>
+
+    <div class="feature-intro">
+        <h2 style="font-size:23px;color:#252d39;margin-bottom:8px;">a thought for the moment.</h2>
+        <p>Some words stay with us. Here's a small collection of reminders for the days that need them.</p>
+    </div>
+
+    <section class="feature-card">
+        <div class="mini-label">thought for the moment</div>
+        <div class="thought-quote" id="thoughtQuote">“Some lessons come from books, others come from experience.”</div>
+        <div class="thought-credit" id="thoughtCredit">a little reminder</div>
+        <div class="feature-actions">
+            <button class="feature-button" id="anotherQuote" type="button">another thought ↗</button>
+        </div>
+    </section>
+
+<div class="feature-intro">
+<h2 style="font-size:23px;color:#252d39;margin-bottom:8px;">leave a little something.</h2>
+        <p>You've visited this little corner of the internet…leave a thought, a hello, or a kind message before you go.</p></div>
+
+    <section class="feature-card" id="guestbook">
+        <div class="mini-label">the guestbook</div>
+                <form id="guestForm" style="display:grid;gap:10px;margin-top:17px;">
+            <input class="feature-input" id="guestName" type="text" maxlength="40" placeholder="your name / nickname" required>
+            <textarea class="feature-textarea" id="guestMessage" maxlength="500" placeholder="write your message here..." required></textarea>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+                <span style="font:10px 'DM Mono',monospace;color:#a1a8b2;">500 characters max</span>
+                <button class="feature-button" type="submit">sign the guestbook</button>
+            </div>
+        </form>
+        <p class="feature-feedback" id="guestFeedback" aria-live="polite"></p>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin:20px 0 10px;">
+            <h2 style="font-size:15px;margin:0;">notes from visitors</h2>
+            <span id="guestCount" style="font:10px 'DM Mono',monospace;color:#9aa3ae;">0 notes</span>
+        </div>
+        <div id="guestEntries" aria-live="polite"><div class="empty-guestbook">The page is waiting for its first hello.</div></div>
+        <p style="margin-top:15px;font-size:10px;color:#a0a7b0;">Messages are shared with visitors of this blog. Please keep your note kind and respectful.</p>
+    </section>
+
+    <footer style="text-align:center;padding:25px 0;font:10px 'DM Mono',monospace;color:#a0a7b0;">jinro velasquez | g11-09</footer>
+</main>
+
+</div>
+
+
+<!-- PHOTO LIGHTBOX -->
+
+<div class="photo-lightbox" id="photoLightbox" aria-hidden="true">
+
+    <button type="button" class="lightbox-close" id="closeLightbox"
+        aria-label="Close enlarged photo">&times;</button>
+
+    <img class="lightbox-image" id="lightboxImage" src="" alt="">
+
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+
+</div>
+
+
+<!-- THIN TOP MUSIC STRIP -->
+
+<div class="music-player">
+
+    <div class="music-info">
+        <span class="music-title" id="songTitle">Viva La Vida</span>
+        <span class="music-artist" id="songArtist">— Coldplay</span>
+    </div>
+
+    <div class="music-controls">
+
+        <button class="music-button" id="previousSong"
+            aria-label="Previous song">|◀</button>
+
+        <button class="music-button" id="musicToggle"
+            aria-label="Play music">▶</button>
+
+        <button class="music-button" id="nextSong"
+            aria-label="Next song">▶|</button>
+
+        <input
+            class="music-volume"
+            id="musicVolume"
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0.5"
+            aria-label="Volume">
+
+        <button class="music-button lyrics-toggle" id="lyricsToggle"
+            type="button" aria-expanded="false" aria-controls="lyricsPanel">♪ lyrics</button>
+
+    </div>
+
+    <audio id="backgroundMusic" preload="auto"></audio>
+
+</div>
+
+<div class="lyrics-panel" id="lyricsPanel" hidden>
+    <div class="lyrics-panel-heading">
+        <div>
+            <span class="lyrics-eyebrow">NOW PLAYING · SING ALONG</span>
+            <strong id="lyricsSongName">Viva La Vida</strong>
+            <span id="lyricsSongArtist">Coldplay</span>
+        </div>
+        <button type="button" class="lyrics-close" id="lyricsClose" aria-label="Close lyrics panel">×</button>
+    </div>
+    <div class="lyrics-seeker-wrap">
+        <input class="lyrics-seeker" id="lyricsSeeker" type="range"
+            min="0" max="0" step="0.1" value="0"
+            aria-label="Seek through song" disabled>
+        <div class="lyrics-time-row">
+            <span id="lyricsElapsed">0:00</span>
+            <span id="lyricsRemaining">-0:00</span>
+        </div>
+    </div>
+    <div class="lyrics-scroll" id="lyricsScroll" aria-live="polite">
+        <div class="lyrics-lines" id="lyricsLines"></div>
+    </div>
+    <p class="lyrics-sync-note">Life is fleeting, but the moments we make, the people we love, and the memories we leave behind make it worth living. So live fully, while you can.</p>
+</div>
+
+<script>
+
+const playlist = [
+    {
+        title: "Viva La Vida",
+        artist: "Coldplay",
+        file: "https://res.cloudinary.com/tumhfwoi/video/upload/v1795476642/vivalavida.mp3"
+    },
+    {
+        title: "The Nights",
+        artist: "Avicii",
+        file: "https://res.cloudinary.com/tumhfwoi/video/upload/v1795476642/thenights.mp3"
+    },
+    {
+        title: "Pompeii",
+        artist: "Bastille",
+        file: "https://res.cloudinary.com/tumhfwoi/video/upload/v1795476641/pompeii.mp3"
+    },
+    {
+        title: "The Days",
+        artist: "Avicii",
+        file: "https://res.cloudinary.com/tumhfwoi/video/upload/v1795476641/thedays.mp3"
+    },
+    {
+        title: "A Sky Full of Stars",
+        artist: "Coldplay",
+        file: "https://res.cloudinary.com/tumhfwoi/video/upload/v1795476640/askyfullofstars.mp3"
+    }
+];
+
+const music = document.getElementById("backgroundMusic");
+const toggle = document.getElementById("musicToggle");
+const volume = document.getElementById("musicVolume");
+const title = document.getElementById("songTitle");
+const artist = document.getElementById("songArtist");
+const lyricsPanel = document.getElementById("lyricsPanel");
+const lyricsToggle = document.getElementById("lyricsToggle");
+const lyricsClose = document.getElementById("lyricsClose");
+const lyricsSongName = document.getElementById("lyricsSongName");
+const lyricsSongArtist = document.getElementById("lyricsSongArtist");
+const lyricsLines = document.getElementById("lyricsLines");
+const lyricsScroll = document.getElementById("lyricsScroll");
+const lyricsSeeker = document.getElementById("lyricsSeeker");
+const lyricsElapsed = document.getElementById("lyricsElapsed");
+const lyricsRemaining = document.getElementById("lyricsRemaining");
+
+const lyricText = [
+    [
+        "I used to rule the world",
+        "Seas would rise when I gave the word",
+        "Now in the morning I sleep alone",
+        "Sweep the streets I used to own",
+        "",
+        "I used to roll the dice",
+        "Feel the fear in my enemy's eyes",
+        "Listened as the crowd would sing,",
+        "\"Now the old king is dead! Long live the king!\"",
+        "One minute I held the key",
+        "Next the walls were closed on me",
+        "And I discovered that my castles stand",
+        "Upon pillars of salt and pillars of sand",
+        "",
+        "I hear Jerusalem bells a-ringing",
+        "Roman cavalry choirs are singing",
+        "Be my mirror, my sword and shield",
+        "My missionaries in a foreign field",
+        "For some reason I can't explain",
+        "Once you'd gone there was never",
+        "Never an honest word",
+        "And that was when I ruled the world",
+        "",
+        "It was a wicked and wild wind",
+        "Blew down the doors to let me in",
+        "Shattered windows and the sound of drums",
+        "People couldn't believe what I'd become",
+        "Revolutionaries wait",
+        "For my head on a silver plate",
+        "Just a puppet on a lonely string",
+        "Oh who would ever want to be king?",
+        "",
+        "I hear Jerusalem bells a-ringing",
+        "Roman cavalry choirs are singing",
+        "Be my mirror, my sword and shield",
+        "My missionaries in a foreign field",
+        "For some reason I can't explain",
+        "I know St. Peter won't call my name",
+        "Never an honest word",
+        "But that was when I ruled the world",
+        "",
+        "Oh, oh, oh, oh, oh, oh",
+        "Oh, oh, oh, oh, oh, oh",
+        "Oh, oh, oh, oh, oh, oh",
+        "Oh, oh, oh, oh, oh, oh",
+        "Oh, oh, oh, oh, oh, oh",
+        "",
+        "Hear Jerusalem bells a-ringing",
+        "Roman cavalry choirs are singing",
+        "Be my mirror, my sword and shield",
+        "My missionaries in a foreign field",
+        "For some reason I can't explain",
+        "I know St. Peter won't call my name",
+        "Never an honest word",
+        "But that was when I ruled the world"
+    ],
+    [
+        "Once upon a younger year",
+        "When all our shadows disappeared",
+        "The animals inside came out to play",
+        "Went face to face with all our fears",
+        "Learned our lessons through the tears",
+        "Made memories we knew would never fade",
+        "",
+        "One day, my father—he told me",
+        "\"Son, don't let it slip away.\"",
+        "He took me in his arms. I heard him say",
+        "",
+        "\"When you get older",
+        "Your wild heart will live for younger days",
+        "Think of me, if ever you're afraid.\"",
+        "",
+        "He said, \"One day, you'll leave this world behind",
+        "So, live a life you will remember.\"",
+        "My father told me, when I was just a child",
+        "\"These are the nights that never die.\"",
+        "My father told me",
+        "",
+        "\"When thunder clouds start pouring down",
+        "Light a fire they can't put out",
+        "Carve your name into those shining stars.\"",
+        "He said, \"Go venture far beyond the shores",
+        "Don't forsake this life of yours",
+        "I'll guide you home no matter where you are.\"",
+        "",
+        "One day, my father—he told me",
+        "\"Son, don't let it slip away.\"",
+        "When I was just a kid, I heard him say",
+        "",
+        "\"When you get older",
+        "Your wild heart will live for younger days",
+        "Think of me if ever you're afraid.\"",
+        "",
+        "He said, \"One day, you'll leave this world behind",
+        "So, live a life you will remember.\"",
+        "My father told me, when I was just a child",
+        "\"These are the nights that never die.\"",
+        "My father told me",
+        "",
+        "\"These are the nights that never die.\"",
+        "My father told me",
+        "My father told me"
+    ],
+    [
+        "Eh-eheu, eheu [x8]",
+        "I was left to my own devi-i-i-i-ces",
+        "Many days fell away with nothing to show",
+        "And the walls kept tumbling down",
+        "In the city that we love",
+        "Gray clouds roll over the hills",
+        "Bringing darkness from above",
+        "But if you close your eyes",
+        "Does it almost feel like",
+        "Nothing changed at all?",
+        "And if you close your eyes",
+        "Does it almost feel like",
+        "You've been here before?",
+        "How am I gonna be an optimist about this?",
+        "How am I gonna be an optimist about this?",
+        "We were caught up and lost in all of our vices",
+        "In your pose as the dust settled around us",
+        "And the walls kept tumbling down",
+        "In the city that we love",
+        "Gray clouds roll over the hills",
+        "Bringing darkness from above",
+        "But if you close your eyes",
+        "Does it almost feel like",
+        "Nothing changed at all?",
+        "And if you close your eyes",
+        "Does it almost feel like",
+        "You've been here before?",
+        "How am I gonna be an optimist about this?",
+        "How am I gonna be an optimist about this?",
+        "Eh-eheu, eheu [x4]",
+        "Oh where do we begin?",
+        "The rubble or our sins?",
+        "Oh oh where do we begin?",
+        "The rubble or our sins?",
+        "And the walls kept tumbling down (oh where do we begin?)",
+        "In the city that we love (the rubble or our sins?)",
+        "Gray clouds roll over the hills (oh where do we begin?)",
+        "Bringing darkness from above (the rubble or our sins?)",
+        "But if you close your eyes",
+        "Does it almost feel like",
+        "Nothing changed at all?",
+        "And if you close your eyes",
+        "Does it almost feel like",
+        "You've been here before?",
+        "How am I gonna be an optimist about this?",
+        "How am I gonna be an optimist about this?",
+        "If you close your eyes, does it almost feel like nothing changed at all?",
+        "Eh-eheu, eheu [x8]"
+    ],
+    [
+        "Under the tree where the grass don't grow",
+        "We made a promise to never get old",
+        "You had a chance, and you took it on me",
+        "And I made a promise that I couldn't keep",
+        "Heartache, heartbreak, all over town",
+        "But something flipped like a switch when you came around",
+        "And I'm in pieces, pick me up, and put me together",
+        "(Oh whoa oh)",
+        "These are the days we've been waiting for",
+        "Days like these, who could ask for more?",
+        "Keep them coming 'cause we're not done yet",
+        "These are the days we won't regret",
+        "These are the days we won't forget",
+        "These are the days we've been waiting for",
+        "Rattle the cage, and slam that door",
+        "And the world is calling us, but not just yet",
+        "These are the days we won't regret",
+        "These are the days we won't forget",
+        "Out on the midnight, the wild ones howl",
+        "The last of the lost boys have thrown in the towel",
+        "We used to believe we were stars aligned",
+        "You made a wish, and I fell out of—",
+        "Time flew, cut through, all over town",
+        "You made me bleed when I look up, and you're not around",
+        "But I'm in pieces, pick me up, and put me together",
+        "(Oh whoa oh)",
+        "These are the days we've been waiting for",
+        "Neither of us knows what's in store",
+        "You just roll your window down, and place your bets",
+        "These are the days we won't regret",
+        "These are the days we'll never forget",
+        "And these are the days (These are the days)",
+        "And these are the days, eh (These are the days)"
+    ],
+    [
+        "'Cause you're a sky, 'cause you're a sky full of stars",
+        "I'm gonna give you my heart",
+        "'Cause you're a sky, 'cause you're a sky full of stars",
+        "'Cause you light up the path",
+        "I don't care, go on and tear me apart",
+        "I don't care if you do, ooh",
+        "'Cause in a sky, 'cause in a sky full of stars",
+        "I think I saw you",
+        "'Cause you're a sky, 'cause you're a sky full of stars",
+        "I wanna die in your arms",
+        "'Cause you get lighter the more it gets dark",
+        "I'm gonna give you my heart",
+        "I don't care, go on and tear me apart",
+        "I don't care if you do, ooh",
+        "'Cause in a sky, 'cause in a sky full of stars",
+        "I think I see you",
+        "I think I see you",
+        "'Cause you're a sky, you're a sky full of stars",
+        "Such a heavenly view",
+        "You're such a heavenly view"
+    ]
+];
+
+let renderedLyricNodes = [];
+
+let currentSong = 0;
+
+music.volume = 0.5;
+
+function loadSong(index) {
+    currentSong = (index + playlist.length) % playlist.length;
+
+    music.src = playlist[currentSong].file;
+    title.textContent = playlist[currentSong].title;
+    artist.textContent = "— " + playlist[currentSong].artist;
+
+    lyricsSongName.textContent = playlist[currentSong].title;
+    lyricsSongArtist.textContent = playlist[currentSong].artist;
+    renderLyrics();
+    lyricsSeeker.value = "0";
+    lyricsSeeker.max = "0";
+    lyricsSeeker.disabled = true;
+    lyricsElapsed.textContent = "0:00";
+    lyricsRemaining.textContent = "-0:00";
+
+    music.load();
+}
+
+function renderLyrics() {
+    lyricsLines.innerHTML = "";
+    renderedLyricNodes = [];
+    lyricText[currentSong].forEach((line, index) => {
+        const node = document.createElement("div");
+        node.className = line ? "lyric-line" : "lyric-line lyric-gap";
+        node.textContent = line || "\u00a0";
+        node.dataset.index = index;
+        lyricsLines.appendChild(node);
+        renderedLyricNodes.push(node);
+    });
+    updateKaraokeLine();
+}
+
+const lyricStartTimes = [
+    [0, 16, 19, 23, -1, 40, 44, 47, 51, 54, 59, 61, 66, -1, 69, 73, 77, 80, 84, 87, 90, 94, -1, 110, 114, 117, 121, 124, 128, 130, 135, -1, 139, 144, 147, 150, 154, 157, 161, 164, -1, 181, 184, 187, 190, 193, -1, 195, 199, 203, 206, 210, 213, 216, 219],
+    [0, 4, 6, 9, 12, 14, -1, 16, 19, 21, -1, 24, 26, 29, -1, 31, 36, 40, 43, 47, -1, 77, 80, 83, 86, 88, 90, -1, 93, 95, 97, -1, 100, 102, 105, -1, 108, 112, 116, 120, 124, -1, 135, 138, 168],
+    [0, 17, 25, 33, 35, 40, 43, 48, 51, 54, 57, 59, 61, 65, 69, 73, 80, 87, 90, 95, 98, 103, 105, 108, 111, 114, 116, 120, 124, 127, 135, 138, 142, 146, 150, 153, 157, 160, 165, 168, 171, 174, 176, 178, 182, 186, 189, 197],
+    [0, 13, 21, 28, 37, 40, 43, 49, 52, 56, 59, 63, 66, 70, 74, 78, 82, 85, 97, 104, 112, 120, 123, 127, 131, 137, 138, 142, 146, 149, 153, 157, 165],
+    [0, 23, 32, 40, 47, 54, 63, 68, 101, 109, 117, 125, 133, 140, 149, 154, 162, 218, 223, 230]
+];
+
+function getLyricLineAtTime() {
+    const times = lyricStartTimes[currentSong];
+    if (!Array.isArray(times) || !times.length) return 0;
+
+    let activeIndex = 0;
+    const limit = Math.min(times.length, lyricText[currentSong].length);
+    for (let i = 0; i < limit; i++) {
+        const start = times[i];
+        if (start >= 0 && music.currentTime >= start) {
+            activeIndex = i;
+        } else if (start >= 0 && music.currentTime < start) {
+            break;
+        }
+    }
+    return activeIndex;
+}
+
+function updateKaraokeLine() {
+    if (!renderedLyricNodes.length) return;
+    const activeIndex = getLyricLineAtTime();
+
+    renderedLyricNodes.forEach((node, index) => {
+        node.classList.toggle("active", index === activeIndex && !!lyricText[currentSong][index]);
+        node.classList.toggle("past", index < activeIndex);
+    });
+
+    updateLyricsSeeker();
+
+    const activeNode = renderedLyricNodes[activeIndex];
+    if (!lyricsPanel.hidden && activeNode && lyricText[currentSong][activeIndex]) {
+        const top = activeNode.offsetTop - lyricsLines.offsetTop;
+        const bottom = top + activeNode.offsetHeight;
+        if (top < lyricsScroll.scrollTop || bottom > lyricsScroll.scrollTop + lyricsScroll.clientHeight) {
+            lyricsScroll.scrollTo({ top: Math.max(0, top - lyricsScroll.clientHeight * 0.38), behavior: "smooth" });
+        }
+    }
+}
+
+function formatMusicTime(seconds) {
+    if (!Number.isFinite(seconds) || seconds < 0) seconds = 0;
+    const wholeSeconds = Math.floor(seconds);
+    const minutes = Math.floor(wholeSeconds / 60);
+    const remainder = String(wholeSeconds % 60).padStart(2, "0");
+    return `${minutes}:${remainder}`;
+}
+
+function updateLyricsSeeker() {
+    const duration = music.duration;
+    const current = Number.isFinite(music.currentTime) ? music.currentTime : 0;
+    if (Number.isFinite(duration) && duration > 0) {
+        lyricsSeeker.max = String(duration);
+        lyricsSeeker.disabled = false;
+        lyricsSeeker.value = String(Math.min(current, duration));
+        const percent = Math.min(100, Math.max(0, (current / duration) * 100));
+        lyricsSeeker.style.background =
+            `linear-gradient(to right, #6e9fc2 0%, #6e9fc2 ${percent}%, #dce8f0 ${percent}%, #dce8f0 100%)`;
+        lyricsElapsed.textContent = formatMusicTime(current);
+        lyricsRemaining.textContent = `-${formatMusicTime(Math.max(0, duration - current))}`;
+    } else {
+        lyricsSeeker.max = "0";
+        lyricsSeeker.value = "0";
+        lyricsSeeker.disabled = true;
+        lyricsElapsed.textContent = formatMusicTime(current);
+        lyricsRemaining.textContent = "-0:00";
+    }
+}
+
+lyricsSeeker.addEventListener("input", () => {
+    if (!Number.isFinite(music.duration) || music.duration <= 0) return;
+    music.currentTime = Math.min(music.duration, Math.max(0, Number(lyricsSeeker.value)));
+    updateLyricsSeeker();
+    updateKaraokeLine();
+});
+
+music.addEventListener("timeupdate", updateKaraokeLine);
+music.addEventListener("loadedmetadata", () => {
+    updateLyricsSeeker();
+    updateKaraokeLine();
+});
+music.addEventListener("durationchange", updateLyricsSeeker);
+music.addEventListener("seeked", () => {
+    updateLyricsSeeker();
+    updateKaraokeLine();
+});
+
+// Playback state and recovery
+let musicHasStarted = false;
+let recoveryTimer = null;
+let recoveryInProgress = false;
+let recoveryAttempts = 0;
+
+async function playMusic() {
+    musicHasStarted = true;
+    music.muted = false;
+    music.volume = Number(volume.value);
+
+    try {
+        await music.play();
+    } catch (error) {
+        toggle.textContent = "▶";
+        toggle.setAttribute("aria-label", "Play music");
+        console.error("Music playback failed:", error);
+    }
+}
+
+function clearRecoveryTimer() {
+    if (recoveryTimer) {
+        clearTimeout(recoveryTimer);
+        recoveryTimer = null;
+    }
+}
+
+function scheduleAudioRecovery() {
+    if (!musicHasStarted || music.paused || recoveryInProgress || recoveryAttempts >= 2) return;
+
+    clearRecoveryTimer();
+    recoveryTimer = setTimeout(() => {
+        if (!musicHasStarted || music.paused || music.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) return;
+
+        recoveryInProgress = true;
+        recoveryAttempts++;
+
+        const resumeAt = Number.isFinite(music.currentTime) ? music.currentTime : 0;
+        const currentSource = playlist[currentSong].file;
+
+        music.pause();
+        music.src = currentSource;
+        music.load();
+
+        const restorePlayback = () => {
+            music.removeEventListener("loadedmetadata", restorePlayback);
+            if (resumeAt > 0 && Number.isFinite(music.duration)) {
+                try {
+                    music.currentTime = Math.min(resumeAt, Math.max(0, music.duration - 0.5));
+                } catch (error) {
+                    console.warn("Could not restore the previous playback position:", error);
+                }
+            }
+            recoveryInProgress = false;
+            playMusic();
+        };
+
+        music.addEventListener("loadedmetadata", restorePlayback);
+    }, 5000);
+}
+
+toggle.addEventListener("click", () => {
+    if (music.paused) {
+        playMusic();
+    } else {
+        music.pause();
+    }
+});
+
+document.getElementById("nextSong").addEventListener("click", () => {
+    recoveryAttempts = 0;
+    loadSong(currentSong + 1);
+    playMusic();
+});
+
+document.getElementById("previousSong").addEventListener("click", () => {
+    recoveryAttempts = 0;
+    loadSong(currentSong - 1);
+    playMusic();
+});
+
+music.addEventListener("playing", () => {
+    clearRecoveryTimer();
+    recoveryInProgress = false;
+    toggle.textContent = "Ⅱ";
+    toggle.setAttribute("aria-label", "Pause music");
+});
+
+music.addEventListener("play", () => {
+    toggle.textContent = "Ⅱ";
+    toggle.setAttribute("aria-label", "Pause music");
+});
+
+music.addEventListener("pause", () => {
+    clearRecoveryTimer();
+    toggle.textContent = "▶";
+    toggle.setAttribute("aria-label", "Play music");
+});
+
+music.addEventListener("waiting", scheduleAudioRecovery);
+music.addEventListener("stalled", scheduleAudioRecovery);
+music.addEventListener("canplay", clearRecoveryTimer);
+
+volume.addEventListener("input", () => {
+    music.volume = Number(volume.value);
+});
+
+lyricsToggle.addEventListener("click", () => {
+    const willOpen = lyricsPanel.hidden;
+    lyricsPanel.hidden = !willOpen;
+    lyricsToggle.setAttribute("aria-expanded", String(willOpen));
+    if (willOpen) updateKaraokeLine();
+});
+
+lyricsClose.addEventListener("click", () => {
+    lyricsPanel.hidden = true;
+    lyricsToggle.setAttribute("aria-expanded", "false");
+});
+
+music.addEventListener("ended", () => {
+    recoveryAttempts = 0;
+    loadSong(currentSong + 1);
+    playMusic();
+});
+
+music.addEventListener("error", () => {
+    clearRecoveryTimer();
+    toggle.textContent = "▶";
+    toggle.setAttribute("aria-label", "Play music");
+    console.error("Unable to load audio:", playlist[currentSong].file, music.error);
+});
+
+// Load the first track without attempting muted autoplay.
+loadSong(0);
+
+// Start audio only after the visitor's first interaction.
+// This avoids competing muted-autoplay and unmute playback paths.
+function enableMusic() {
+    music.muted = false;
+    music.volume = Number(volume.value);
+
+    if (music.paused) {
+        playMusic();
+    }
+
+    document.removeEventListener("click", enableMusic);
+    document.removeEventListener("keydown", enableMusic);
+    document.removeEventListener("touchstart", enableMusic);
+}
+
+document.addEventListener("click", enableMusic);
+document.addEventListener("keydown", enableMusic);
+document.addEventListener("touchstart", enableMusic, { passive: true });
+
+
+// PAGE NAVIGATION
+
+const pages = {
+    home: document.getElementById("home"),
+    about: document.getElementById("aboutPage"),
+    photography: document.getElementById("photographyPage"),
+    playroom: document.getElementById("playroomPage"),
+    thoughtsPage: document.getElementById("thoughtsPage")
+};
+
+document.querySelectorAll("[data-page]").forEach(link => {
+    link.addEventListener("click", event => {
+        event.preventDefault();
+
+        const selectedPage = link.dataset.page;
+
+        if (!pages[selectedPage]) return;
+
+        Object.entries(pages).forEach(([name, page]) => {
+            page.hidden = name !== selectedPage;
+        });
+
+        pages[selectedPage].scrollTop = 0;
+    });
+});
+
+
+
+// PHOTO ALBUMS + SHARED LIGHTBOX
+
+const lightbox = document.getElementById("photoLightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxCaption = document.getElementById("lightboxCaption");
+const closeLightbox = document.getElementById("closeLightbox");
+
+let activeMarquee = null;
+
+
+// OPEN ENLARGED PHOTO
+
+function openPhoto(card) {
+
+    const photo = card.querySelector(".album-photo");
+    const caption = card.querySelector(".photo-caption");
+
+    if (!photo || !lightbox) return;
+
+    lightboxImage.src = photo.currentSrc || photo.src;
+    lightboxImage.alt = photo.alt || "";
+
+    lightboxCaption.textContent = caption
+        ? caption.textContent.trim()
+        : "";
+
+    activeMarquee = card.closest(".marquee-window");
+
+    lightbox.classList.add("active");
+    lightbox.setAttribute("aria-hidden", "false");
+
+    activeMarquee?.classList.add("is-paused");
+}
+
+
+// MAKE PHOTOS IN BOTH ALBUMS CLICKABLE
+
+document.querySelectorAll(
+    ".marquee-group:not([aria-hidden='true']) .photo-card"
+).forEach(card => {
+
+    card.addEventListener("click", () => {
+        openPhoto(card);
+    });
+
+});
+
+
+// CLOSE PHOTO
+
+function closePhoto() {
+
+    if (!lightbox) return;
+
+    lightbox.classList.remove("active");
+    lightbox.setAttribute("aria-hidden", "true");
+
+    lightboxImage.src = "";
+
+    activeMarquee?.classList.remove("is-paused");
+
+    activeMarquee = null;
+}
+
+
+// CLOSE BUTTON
+
+closeLightbox?.addEventListener("click", closePhoto);
+
+
+// CLOSE WHEN CLICKING OUTSIDE THE IMAGE
+
+lightbox?.addEventListener("click", event => {
+
+    if (event.target === lightbox) {
+        closePhoto();
+    }
+
+});
+
+
+// CLOSE USING ESCAPE KEY
+
+document.addEventListener("keydown", event => {
+
+    if (
+        event.key === "Escape" &&
+        lightbox?.classList.contains("active")
+    ) {
+        closePhoto();
+    }
+
+});
+
+
+// SET UP EACH ALBUM'S INDEPENDENT ARROWS
+
+document.querySelectorAll(".marquee-container").forEach(container => {
+
+    const track = container.querySelector(".marquee-track");
+
+    const leftArrow = container.querySelector(
+        ".marquee-arrow.left"
+    );
+
+    const rightArrow = container.querySelector(
+        ".marquee-arrow.right"
+    );
+
+
+    function moveMarquee(direction) {
+
+        if (!track) return;
+
+        const animation = track
+            .getAnimations()
+            .find(item => item.animationName === "photoMarquee");
+
+        const firstGroup = track.querySelector(".marquee-group");
+        const firstPhoto = firstGroup?.querySelector(".photo-card");
+
+        if (!animation || !firstGroup || !firstPhoto) return;
+
+        const groupWidth = firstGroup.getBoundingClientRect().width;
+
+        const photoStep =
+            firstPhoto.getBoundingClientRect().width + 16;
+
+        const duration = animation.effect.getTiming().duration;
+
+        if (
+            !groupWidth ||
+            !duration ||
+            !Number.isFinite(duration)
+        ) return;
+
+        const currentTime = Number(animation.currentTime) || 0;
+
+        const stepTime = (photoStep / groupWidth) * duration;
+
+        animation.currentTime =
+            ((currentTime + direction * stepTime) % duration + duration)
+            % duration;
+
+    }
+
+
+    // PREVIOUS PHOTO
+
+    leftArrow?.addEventListener("click", () => {
+        moveMarquee(-1);
+    });
+
+
+    // NEXT PHOTO
+
+    rightArrow?.addEventListener("click", () => {
+        moveMarquee(1);
+    });
+
+});
+
+
+// INTERACTIVE PAGE 04 — QUICK TRIVIA
+const triviaQuestions = [
+    { q: "Which planet is known as the Red Planet?", a: ["Venus", "Mars", "Jupiter", "Mercury"], correct: 1 },
+    { q: "How many sides does a hexagon have?", a: ["Five", "Six", "Seven", "Eight"], correct: 1 },
+    { q: "Which ocean is the largest?", a: ["Atlantic", "Indian", "Arctic", "Pacific"], correct: 3 },
+    { q: "What is the process by which plants make food using sunlight?", a: ["Respiration", "Photosynthesis", "Evaporation", "Pollination"], correct: 1 },
+    { q: "How many minutes are there in one hour?", a: ["30", "45", "60", "90"], correct: 2 },
+    { q: "What is the capital city of Japan?", a: ["Seoul", "Beijing", "Tokyo", "Bangkok"], correct: 2 },
+    { q: "Which gas do humans need to breathe to survive?", a: ["Carbon dioxide", "Oxygen", "Helium", "Hydrogen"], correct: 1 },
+    { q: "How many colors are traditionally named in a rainbow?", a: ["Five", "Six", "Seven", "Eight"], correct: 2 },
+    { q: "Which animal is the largest mammal on Earth?", a: ["African elephant", "Blue whale", "Giraffe", "Orca"], correct: 1 },
+    { q: "What is the freezing point of water at standard pressure?", a: ["0°C", "10°C", "32°C", "100°C"], correct: 0 },
+    { q: "Which instrument has keys, pedals, and strings?", a: ["Flute", "Violin", "Piano", "Drum"], correct: 2 },
+    { q: "How many days are there in a leap year?", a: ["364", "365", "366", "367"], correct: 2 },
+    { q: "Which part of a plant usually absorbs water from the soil?", a: ["Flower", "Leaf", "Stem", "Root"], correct: 3 },
+    { q: "What is the chemical symbol for gold?", a: ["Ag", "Au", "Gd", "Go"], correct: 1 },
+    { q: "Which continent is the Sahara Desert located in?", a: ["Asia", "Africa", "Australia", "South America"], correct: 1 },
+    { q: "How many degrees are in a right angle?", a: ["45°", "90°", "180°", "360°"], correct: 1 },
+    { q: "Which is the closest star to Earth?", a: ["Sirius", "Polaris", "The Sun", "Proxima Centauri"], correct: 2 },
+    { q: "What do bees collect from flowers to make honey?", a: ["Nectar", "Dew", "Sap", "Pollen only"], correct: 0 },
+    { q: "Which language is primarily spoken in Brazil?", a: ["Spanish", "Portuguese", "French", "Italian"], correct: 1 },
+    { q: "What is the largest organ of the human body?", a: ["Heart", "Liver", "Skin", "Lungs"], correct: 2 },
+    { q: "Which shape has three sides?", a: ["Square", "Triangle", "Pentagon", "Trapezoid"], correct: 1 },
+    { q: "What is the main ingredient in traditional guacamole?", a: ["Cucumber", "Avocado", "Spinach", "Green apple"], correct: 1 },
+    { q: "Which planet is famous for its prominent rings?", a: ["Mars", "Saturn", "Earth", "Venus"], correct: 1 },
+    { q: "How many letters are in the English alphabet?", a: ["24", "25", "26", "27"], correct: 2 },
+    { q: "Which Philippine city is known as the Summer Capital of the Philippines?", a: ["Tagaytay", "Baguio", "Davao", "Cebu"], correct: 1 },
+    { q: "What is the hardest natural substance commonly found on Earth?", a: ["Quartz", "Iron", "Diamond", "Granite"], correct: 2 },
+    { q: "Which blood cells help the body fight infections?", a: ["Red blood cells", "White blood cells", "Platelets", "Plasma"], correct: 1 },
+    { q: "What is the value of 9 × 8?", a: ["63", "64", "72", "81"], correct: 2 },
+    { q: "Which season comes after spring in the usual four-season cycle?", a: ["Winter", "Autumn", "Summer", "Monsoon"], correct: 2 },
+    { q: "What is the name of the force that pulls objects toward Earth?", a: ["Friction", "Magnetism", "Gravity", "Electricity"], correct: 2 },
+    { q: "Which organ pumps blood throughout the human body?", a: ["Lungs", "Brain", "Heart", "Kidneys"], correct: 2 },
+    { q: "What is the smallest prime number?", a: ["0", "1", "2", "3"], correct: 2 },
+    { q: "Which country is home to the Great Wall?", a: ["India", "China", "Japan", "Thailand"], correct: 1 },
+    { q: "What is the common name for H2O?", a: ["Salt", "Water", "Oxygen", "Hydrogen"], correct: 1 },
+    { q: "Which natural satellite orbits Earth?", a: ["The Moon", "Phobos", "Titan", "Europa"], correct: 0 },
+    { q: "How many players from one team are on the court in a standard basketball game?", a: ["Four", "Five", "Six", "Seven"], correct: 1 },
+    { q: "Which device is used to measure temperature?", a: ["Barometer", "Thermometer", "Hygrometer", "Anemometer"], correct: 1 },
+    { q: "What is the first month of the year?", a: ["December", "February", "January", "March"], correct: 2 },
+    { q: "Which Philippine island is the largest by land area?", a: ["Mindanao", "Samar", "Palawan", "Luzon"], correct: 3 },
+    { q: "Which metal is liquid at ordinary room temperature?", a: ["Copper", "Mercury", "Aluminum", "Iron"], correct: 1 },
+    { q: "What is the opposite direction of north?", a: ["East", "West", "South", "Northeast"], correct: 2 },
+    { q: "Which part of the human body is primarily responsible for thinking?", a: ["Heart", "Brain", "Stomach", "Liver"], correct: 1 },
+    { q: "How many planets are in our solar system?", a: ["Seven", "Eight", "Nine", "Ten"], correct: 1 },
+    { q: "Which instrument is used to see very small objects?", a: ["Telescope", "Microscope", "Periscope", "Binoculars"], correct: 1 },
+    { q: "What is the main source of energy for Earth's climate system?", a: ["The Moon", "The Sun", "Earth's core", "The oceans"], correct: 1 },
+    { q: "Which Philippine language is widely spoken in Cebu?", a: ["Ilocano", "Kapampangan", "Cebuano", "Bikol"], correct: 2 },
+    { q: "What is 12 squared?", a: ["124", "132", "144", "156"], correct: 2 },
+    { q: "Which state of matter has a fixed volume but no fixed shape?", a: ["Solid", "Liquid", "Gas", "Plasma"], correct: 1 },
+    { q: "Which bird is commonly associated with delivering babies in folklore?", a: ["Owl", "Stork", "Eagle", "Peacock"], correct: 1 }
+];
+
+// Shuffle a fresh copy whenever the page is opened or reloaded.
+function shuffleTrivia(items) {
+    const shuffled = [...items];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+}
+let activeTriviaQuestions = shuffleTrivia(triviaQuestions).slice(0, 5);
+let triviaIndex = 0;
+let triviaAnswers = new Array(activeTriviaQuestions.length).fill(null);
+let triviaSubmitted = false;
+
+function renderTrivia() {
+    if (triviaSubmitted) return;
+    const item = activeTriviaQuestions[triviaIndex];
+    const question = document.getElementById("triviaQuestion");
+    const options = document.getElementById("triviaOptions");
+    const feedback = document.getElementById("triviaFeedback");
+    const prev = document.getElementById("prevTrivia");
+    const next = document.getElementById("nextTrivia");
+    const submit = document.getElementById("submitTrivia");
+
+    question.textContent = item.q;
+    document.getElementById("triviaProgress").textContent =
+        `QUESTION ${triviaIndex + 1} / ${activeTriviaQuestions.length}`;
+    options.innerHTML = "";
+    feedback.textContent = triviaAnswers[triviaIndex] === null
+        ? "Choose one answer to continue."
+        : "Answer saved. You can change it before submitting.";
+
+    item.a.forEach((answer, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = `${String.fromCharCode(65 + index)}. ${answer}`;
+        if (triviaAnswers[triviaIndex] === index) button.classList.add("selected");
+        button.setAttribute("aria-pressed", triviaAnswers[triviaIndex] === index ? "true" : "false");
+        button.addEventListener("click", () => {
+            triviaAnswers[triviaIndex] = index;
+            renderTrivia();
+        });
+        options.appendChild(button);
+    });
+
+    prev.style.display = triviaIndex === 0 ? "none" : "";
+    next.style.display = triviaIndex === activeTriviaQuestions.length - 1 ? "none" : "";
+    submit.style.display = triviaIndex === activeTriviaQuestions.length - 1 ? "" : "none";
+}
+document.getElementById("prevTrivia").addEventListener("click", () => {
+    if (triviaIndex > 0) {
+        triviaIndex--;
+        renderTrivia();
+    }
+});
+document.getElementById("nextTrivia").addEventListener("click", () => {
+    if (triviaAnswers[triviaIndex] === null) {
+        document.getElementById("triviaFeedback").textContent = "Pick an answer before moving on.";
+        return;
+    }
+    if (triviaIndex < activeTriviaQuestions.length - 1) {
+        triviaIndex++;
+        renderTrivia();
+    }
+});
+document.getElementById("submitTrivia").addEventListener("click", () => {
+    const unanswered = triviaAnswers.findIndex(answer => answer === null);
+    if (unanswered !== -1) {
+        triviaIndex = unanswered;
+        renderTrivia();
+        document.getElementById("triviaFeedback").textContent = "You still have an unanswered question. Choose an answer before submitting.";
+        return;
+    }
+
+    triviaSubmitted = true;
+    const score = activeTriviaQuestions.reduce(
+        (total, item, index) => total + (triviaAnswers[index] === item.correct ? 1 : 0), 0
+    );
+    document.getElementById("triviaQuiz").style.display = "none";
+    const results = document.getElementById("triviaResults");
+    results.style.display = "block";
+
+    const heading = document.createElement("h2");
+    heading.textContent = "your trivia results";
+    results.appendChild(heading);
+
+    const scoreLine = document.createElement("p");
+    scoreLine.className = "trivia-result-score";
+    scoreLine.textContent = `You got ${score} out of ${activeTriviaQuestions.length} correct.`;
+    results.appendChild(scoreLine);
+
+    const legend = document.createElement("p");
+    legend.style.cssText = "font-size:11px;color:#7d8998;margin:0 0 12px;";
+    legend.textContent = "Your answer is shown in red; the correct answer is shown in green.";
+    results.appendChild(legend);
+
+    activeTriviaQuestions.forEach((item, index) => {
+        const review = document.createElement("div");
+        review.className = "trivia-review";
+
+        const title = document.createElement("h3");
+        title.textContent = `${index + 1}. ${item.q}`;
+        review.appendChild(title);
+
+        const yourAnswer = document.createElement("p");
+        yourAnswer.className = "trivia-your-answer";
+        yourAnswer.textContent = `Your answer: ${String.fromCharCode(65 + triviaAnswers[index])}. ${item.a[triviaAnswers[index]]}`;
+        review.appendChild(yourAnswer);
+
+        const correctAnswer = document.createElement("p");
+        correctAnswer.className = "trivia-correct-answer";
+        correctAnswer.textContent = `Correct answer: ${String.fromCharCode(65 + item.correct)}. ${item.a[item.correct]}`;
+        review.appendChild(correctAnswer);
+
+        results.appendChild(review);
+    });
+
+    const restart = document.createElement("button");
+    restart.type = "button";
+    restart.className = "feature-button";
+    restart.textContent = "try another round ↻";
+    restart.style.marginTop = "16px";
+    restart.addEventListener("click", () => {
+        // Start a fresh round in place without reloading the whole website.
+        activeTriviaQuestions = shuffleTrivia(triviaQuestions).slice(0, 5);
+        triviaAnswers = new Array(activeTriviaQuestions.length).fill(null);
+        triviaIndex = 0;
+        triviaSubmitted = false;
+        results.innerHTML = "";
+        results.style.display = "none";
+        document.getElementById("triviaQuiz").style.display = "block";
+        renderTrivia();
+    });
+    results.appendChild(restart);
+});
+renderTrivia();
+
+// INTERACTIVE PAGE 04 — FIVE-LETTER WORD GAME
+const wordDeck = [
+    { word: "LIGHT", hint: "It helps you see in the dark." },
+    { word: "PLANT", hint: "A living thing that often grows in soil." },
+    { word: "SMILE", hint: "A happy expression." },
+    { word: "GRACE", hint: "Elegance, kindness, or a quiet sense of poise." },
+    { word: "DREAM", hint: "A story your mind may create while you sleep." }
+];
+let activeWord = wordDeck[0];
+let wordAttempts = 0;
+let wordFinished = false;
+function resetWordGame() {
+    activeWord = wordDeck[Math.floor(Math.random() * wordDeck.length)];
+    wordAttempts = 0;
+    wordFinished = false;
+    document.getElementById("wordHint").textContent = "hint: " + activeWord.hint;
+    document.getElementById("wordGuess").value = "";
+    document.getElementById("wordGuess").disabled = false;
+    document.querySelector("#wordForm button[type='submit']").disabled = false;
+    document.getElementById("guessList").innerHTML = "";
+    document.getElementById("wordFeedback").textContent = "You have six tries. Good luck!";
+    renderWordSlots("");
+}
+function renderWordSlots(value) {
+    const holder = document.getElementById("wordSlots");
+    holder.innerHTML = "";
+    for (let i = 0; i < 5; i++) {
+        const slot = document.createElement("span");
+        slot.textContent = value[i] || "·";
+        holder.appendChild(slot);
+    }
+}
+document.getElementById("wordForm").addEventListener("submit", event => {
+    event.preventDefault();
+    if (wordFinished) return;
+    const input = document.getElementById("wordGuess");
+    const guess = input.value.trim().toUpperCase();
+    if (!/^[A-Z]{5}$/.test(guess)) {
+        document.getElementById("wordFeedback").textContent = "Please enter exactly five letters.";
+        return;
+    }
+    wordAttempts++;
+    renderWordSlots(guess);
+    const row = document.createElement("div");
+    row.className = "guess-row";
+    [...guess].forEach((letter, i) => {
+        const tile = document.createElement("span");
+        tile.textContent = letter;
+        if (letter === activeWord.word[i]) tile.style.cssText = "background:#dff0e4;color:#34754a;";
+        else if (activeWord.word.includes(letter)) tile.style.cssText = "background:#fff0ce;color:#946d20;";
+        else tile.style.cssText = "background:#eceef2;color:#858d98;";
+        row.appendChild(tile);
+    });
+    document.getElementById("guessList").appendChild(row);
+    if (guess === activeWord.word) {
+        wordFinished = true;
+        document.getElementById("wordFeedback").textContent = `You got it in ${wordAttempts} ${wordAttempts === 1 ? "try" : "tries"}! ✨`;
+    } else if (wordAttempts >= 6) {
+        wordFinished = true;
+        document.getElementById("wordFeedback").textContent = `Out of tries — the word was ${activeWord.word}. Try another!`;
+    } else {
+        document.getElementById("wordFeedback").textContent = `${6 - wordAttempts} ${6 - wordAttempts === 1 ? "try" : "tries"} left. Green = right spot · yellow = wrong spot.`;
+    }
+    if (wordFinished) {
+        input.disabled = true;
+        document.querySelector("#wordForm button[type='submit']").disabled = true;
+    }
+    input.value = "";
+});
+document.getElementById("resetWord").addEventListener("click", resetWordGame);
+resetWordGame();
+
+// INTERACTIVE PAGE 04 — TIC-TAC-TOE
+let ticCells = Array(9).fill("");
+let ticTurn = "X";
+let ticDone = false;
+let ticMode = null;
+let playerMark = "X";
+let computerMark = "O";
+const ticWins = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+const ticStatus = document.getElementById("ticStatus");
+const ticGameArea = document.getElementById("ticGameArea");
+const ticModePicker = document.getElementById("ticModePicker");
+const ticSymbolPicker = document.getElementById("ticSymbolPicker");
+
+function drawTicBoard() {
+    document.querySelectorAll(".tic-cell").forEach((button, index) => {
+        button.textContent = ticCells[index];
+        button.disabled = Boolean(ticCells[index]) || ticDone;
+        button.setAttribute("aria-label", `Cell ${index + 1}${ticCells[index] ? ": " + ticCells[index] : ""}`);
+    });
+}
+
+function ticWinner(board) {
+    for (const line of ticWins) {
+        const [a, b, c] = line;
+        if (board[a] && board[a] === board[b] && board[a] === board[c]) return board[a];
+    }
+    return board.every(Boolean) ? "draw" : null;
+}
+
+function updateTicStatus() {
+    if (ticDone) return;
+    if (ticMode === "computer") {
+        ticStatus.textContent = ticTurn === playerMark ? `Your turn (${playerMark}).` : "Computer is thinking…";
+    } else {
+        ticStatus.textContent = `Player ${ticTurn}'s turn.`;
+    }
+}
+
+function finishTicTurn() {
+    const result = ticWinner(ticCells);
+    if (result === "X" || result === "O") {
+        ticDone = true;
+        if (ticMode === "computer") {
+            ticStatus.textContent = result === playerMark ? "You win! Nice game." : "The computer wins. Try again?";
+        } else {
+            ticStatus.textContent = `Player ${result} wins! Nice game.`;
+        }
+    } else if (result === "draw") {
+        ticDone = true;
+        ticStatus.textContent = "It's a draw! Play another round?";
+    } else {
+        ticTurn = ticTurn === "X" ? "O" : "X";
+        updateTicStatus();
+    }
+    drawTicBoard();
+}
+
+function bestComputerMove() {
+    // Minimax makes the computer play strategically and never miss a win or block.
+    function minimax(board, isMaximizing, depth) {
+        const result = ticWinner(board);
+        if (result === computerMark) return 10 - depth;
+        if (result === playerMark) return depth - 10;
+        if (result === "draw") return 0;
+
+        if (isMaximizing) {
+            let best = -Infinity;
+            for (let i = 0; i < 9; i++) {
+                if (!board[i]) {
+                    board[i] = computerMark;
+                    best = Math.max(best, minimax(board, false, depth + 1));
+                    board[i] = "";
+                }
+            }
+            return best;
+        } else {
+            let best = Infinity;
+            for (let i = 0; i < 9; i++) {
+                if (!board[i]) {
+                    board[i] = playerMark;
+                    best = Math.min(best, minimax(board, true, depth + 1));
+                    board[i] = "";
+                }
+            }
+            return best;
+        }
+    }
+
+    let bestScore = -Infinity;
+    let bestMove = -1;
+    for (let i = 0; i < 9; i++) {
+        if (!ticCells[i]) {
+            ticCells[i] = computerMark;
+            const score = minimax(ticCells, false, 0);
+            ticCells[i] = "";
+            if (score > bestScore) {
+                bestScore = score;
+                bestMove = i;
+            }
+        }
+    }
+    return bestMove;
+}
+
+function startTicGame(mode, chosenMark = "X") {
+    ticMode = mode;
+    playerMark = chosenMark;
+    computerMark = playerMark === "X" ? "O" : "X";
+    ticCells = Array(9).fill("");
+    ticTurn = mode === "computer" ? "X" : "X";
+    ticDone = false;
+    ticModePicker.hidden = true;
+    ticSymbolPicker.hidden = true;
+    ticGameArea.hidden = false;
+    document.getElementById("ticModeCaption").textContent =
+        mode === "computer"
+            ? `you (${playerMark}) vs computer (${computerMark})`
+            : "two players · X goes first";
+    updateTicStatus();
+    drawTicBoard();
+
+    // If the player chooses O, the computer (X) takes the opening move.
+    if (mode === "computer" && ticTurn === computerMark) makeComputerMove();
+}
+
+function makeComputerMove() {
+    if (ticMode !== "computer" || ticDone || ticTurn !== computerMark) return;
+    ticStatus.textContent = "Computer is thinking…";
+    setTimeout(() => {
+        if (ticMode !== "computer" || ticDone || ticTurn !== computerMark) return;
+        const computerMove = bestComputerMove();
+        if (computerMove !== -1) {
+            ticCells[computerMove] = computerMark;
+            finishTicTurn();
+        }
+    }, 400);
+}
+
+document.querySelectorAll("[data-tic-mode]").forEach(button => {
+    button.addEventListener("click", () => {
+        const mode = button.dataset.ticMode;
+        if (mode === "computer") {
+            ticModePicker.hidden = true;
+            ticSymbolPicker.hidden = false;
+        } else {
+            startTicGame("friend");
+        }
+    });
+});
+
+document.querySelectorAll("[data-player-mark]").forEach(button => {
+    button.addEventListener("click", () => startTicGame("computer", button.dataset.playerMark));
+});
+
+document.querySelectorAll(".tic-cell").forEach(button => {
+    button.addEventListener("click", () => {
+        const index = Number(button.dataset.cell);
+        if (ticDone || ticCells[index] || !ticMode) return;
+        if (ticMode === "computer" && ticTurn !== playerMark) return;
+
+        ticCells[index] = ticTurn;
+        finishTicTurn();
+
+        if (ticMode === "computer" && !ticDone && ticTurn === computerMark) {
+            makeComputerMove();
+        }
+    });
+});
+
+document.getElementById("resetTic").addEventListener("click", () => {
+    if (ticMode) startTicGame(ticMode, playerMark);
+});
+
+document.getElementById("changeTicMode").addEventListener("click", () => {
+    ticMode = null;
+    ticCells = Array(9).fill("");
+    ticTurn = "X";
+    ticDone = false;
+    ticGameArea.hidden = true;
+    ticSymbolPicker.hidden = true;
+    ticModePicker.hidden = false;
+    ticStatus.textContent = "Choose a game mode to begin.";
+    drawTicBoard();
+});
+
+ticStatus.textContent = "Choose a game mode to begin.";
+drawTicBoard();
+
+// INTERACTIVE PAGE 05 — ROTATING THOUGHTS
+const thoughts = [
+    { quote: "Some lessons come from books, others come from experience.", credit: "a little reminder" },
+    { quote: "There's no need to have it all figured out. Just make sure you're making the most of the life you're given.", credit: "on becoming" },
+    { quote: "You do not have to see the whole staircase. Just take the first step.", credit: "on beginning" },
+    { quote: "The little things? The little moments? They aren't little.", credit: "on noticing" },
+    { quote: "Growth is often quiet; sometimes it simply looks like trying again.", credit: "on growing" }
+];
+let thoughtIndex = 0;
+document.getElementById("anotherQuote").addEventListener("click", () => {
+    thoughtIndex = (thoughtIndex + 1) % thoughts.length;
+    document.getElementById("thoughtQuote").textContent = `“${thoughts[thoughtIndex].quote}”`;
+    document.getElementById("thoughtCredit").textContent = thoughts[thoughtIndex].credit;
+});
+
+// INTERACTIVE PAGE 05 — SHARED SUPABASE GUESTBOOK
+// The publishable key is intended for browser use. Row Level Security protects the table.
+const SUPABASE_URL = "https://frkwccokxutreombfinr.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_ubsbsNWS0U6cY7SoLauUHg_jlwGVeDm";
+const guestEntriesContainer = document.getElementById("guestEntries");
+const guestCount = document.getElementById("guestCount");
+const guestFeedback = document.getElementById("guestFeedback");
+const guestForm = document.getElementById("guestForm");
+
+function supabaseHeaders(extra = {}) {
+    return {
+        "apikey": SUPABASE_PUBLISHABLE_KEY,
+        "Authorization": `Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
+        ...extra
+    };
+}
+
+function formatGuestDate(value) {
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return "";
+    return date.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+}
+
+function renderGuestbook(entries) {
+    guestCount.textContent = `${entries.length} ${entries.length === 1 ? "note" : "notes"}`;
+    guestEntriesContainer.replaceChildren();
+
+    if (!entries.length) {
+        guestEntriesContainer.innerHTML = '<div class="empty-guestbook">The page is waiting for its first hello.</div>';
+        return;
+    }
+
+    entries.forEach(entry => {
+        const article = document.createElement("article");
+        article.className = "guest-entry";
+        const name = document.createElement("strong");
+        name.textContent = entry.name || "anonymous";
+        const time = document.createElement("time");
+        time.textContent = formatGuestDate(entry.created_at);
+        const message = document.createElement("p");
+        message.textContent = entry.message || "";
+        article.append(name, time, message);
+        guestEntriesContainer.appendChild(article);
+    });
+}
+
+async function loadGuestbook() {
+    guestCount.textContent = "loading…";
+    try {
+        const response = await fetch(
+            `${SUPABASE_URL}/rest/v1/guestbook?select=id,name,message,created_at&order=created_at.desc`,
+            { headers: supabaseHeaders() }
+        );
+        if (!response.ok) {
+            const detail = await response.text();
+            throw new Error(`Could not load guestbook (${response.status}). ${detail}`);
+        }
+        const entries = await response.json();
+        renderGuestbook(entries);
+    } catch (error) {
+        console.error("Guestbook load error:", error);
+        guestCount.textContent = "unavailable";
+        guestEntriesContainer.innerHTML = '<div class="empty-guestbook">The guestbook could not load right now. Please refresh the page and try again.</div>';
+        guestFeedback.textContent = "Could not connect to the shared guestbook. Please check the Supabase table and policies.";
+    }
+}
+
+guestForm.addEventListener("submit", async event => {
+    event.preventDefault();
+    const name = document.getElementById("guestName").value.trim();
+    const message = document.getElementById("guestMessage").value.trim();
+    if (!name || !message) return;
+
+    const submitButton = guestForm.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    submitButton.textContent = "sending…";
+    guestFeedback.textContent = "Adding your note…";
+
+    try {
+        const response = await fetch(`${SUPABASE_URL}/rest/v1/guestbook`, {
+            method: "POST",
+            headers: supabaseHeaders({
+                "Content-Type": "application/json",
+                "Prefer": "return=representation"
+            }),
+            body: JSON.stringify({ name, message })
+        });
+
+        if (!response.ok) {
+            const detail = await response.text();
+            throw new Error(`Could not submit note (${response.status}). ${detail}`);
+        }
+
+        guestForm.reset();
+        guestFeedback.textContent = "Your note has been added. Thank you for stopping by! ✿";
+        await loadGuestbook();
+    } catch (error) {
+        console.error("Guestbook submit error:", error);
+        guestFeedback.textContent = "Your note couldn't be submitted. Please try again in a moment.";
+    } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "sign the guestbook";
+    }
+});
+
+loadGuestbook();
+
+
+
+</script>
+
+</body>
+</html>
 * {
     margin: 0;
     padding: 0;
